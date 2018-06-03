@@ -193,13 +193,13 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
 
 ### 1. Access the list of all trading pairs
 
-    **HTTP Request**
+**HTTP Request**
 
-    ```http
+```http
     # Request
     GET /api/v1/spot/public/products
-    ```
-    ```javascript
+```
+```javascript
     # Response
     [
         {
@@ -219,28 +219,28 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
         },
         ...
     ]
-    ```
+```
 
-    Response Details
+**Response Details**
 
-    | Field | Descirption |
-    | ----------|:-------:|
-    | code            | Trading pair code |
-    | base_currency   | Base currency |
-    | quote_currency  | Quote currency |
-    | base_min_size   | Minimum Transaction Volume |
-    | base_max_size   | Maximum Transaction Volume |
-    | quote_increment | Minimum Precision |
+| Field | Descirption |
+| ----------|:-------:|
+| code        | Trading pair code |
+| base_currency   | Base currency |
+| quote_currency  | Quote currency |
+| base_min_size   | Minimum Transaction Volume |
+| base_max_size   | Maximum Transaction Volume |
+| quote_increment | Minimum Precision |
 
 ### 2. Access the depth table of trading pairs
 
-    **HTTP Request**
+**HTTP Request**
 
-    ```http
+```http
     # Request
     GET /api/v1/spot/public/products/<code>/orderbook
-    ```
-    ```javascript
+```
+```javascript
     # Response
     {
         "asks":[
@@ -258,32 +258,33 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
             ...
         ]
     }
-    ```
-    **Response Details**
+```
+**Response Details**  
 
-    |Field|Description|
-    | ------------- |:-:|
-    | asks | depth of sellers |
-    | bids | depth of buyers |
 
-    **Request Paramters**
+|Field|Description|  
+|---- |------------|
+| asks | depth of sellers |
+| bids | depth of buyers |
 
-    | Name | Type  | Requited | Description |
-    | ------------- |:--:|:--:|:--:|
-    | Code | String | Y | Trading Pair, e.g. ltc_btc |
+**Request Paramters**
+
+| Name | Type  | Requited | Description |
+| ------------- |-----|-----|-----|
+| Code | String | Y | Trading Pair, e.g. ltc_btc |
 
 ### 3. Access the ticker of a trading pair
 
-    **HTTP Request**
+**HTTP Request**
 
     The snapshot of the latest price, the highest bid price, the lowest ask price and 24-hour trading volume.
 
-    ```http
+```http
     # Request
     GET /api/v1/spot/public/products/<code>/ticker
-    ```
+```
 
-    ```javascript
+```javascript
     # Response
     [
         1526268156264,
@@ -294,36 +295,36 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
         "8481",
         "487.8924"
     ]
-    ```
+```
 
-    **Response Details (from the top down)**
+**Response Details (from the top down)**
 
-    |Field|Description|
-    |--------| :-------: |
-    |timestamp | 1526268156264 |
-    | 24hr Highest|8823.352|
-    | 24hr Lowest|8121.9873|
-    | ask | 8749 |
-    | bid |8260|
-    |latest price|8481|
-    |24h Vol|487.8924|
+|Field|Description|
+|--------| :-------: |
+|timestamp | 1526268156264 |
+| 24hr Highest|8823.352|
+| 24hr Lowest|8121.9873|
+| ask | 8749 |
+| bid |8260|
+|latest price|8481|
+|24h Vol|487.8924|
 
-    **Request Parameter**
+**Request Parameter**
 
-    |Name|Type|Required|Description|
-    |------|:-:|:---:|:---:|
-    |code|String|Y|Trading Pair, e.g. btc-usdt|
+|Name|Type|Required|Description| 
+|------|-----|-----|-----|
+|code|String|Y|Trading Pair, e.g. btc-usdt|
 
 ### 4. Access the market trading records of a trading pair
 
     The request supports pagination.
 
-    **HTTP Request**
-    ```http
+**HTTP Request**
+```http
     # Request
     GET /api/v1/spot/public/products/<code>/fills
-    ```
-    ```javascript
+```
+```javascript
     # Response
     [
         [
@@ -341,22 +342,22 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
             62
         ]
     ]
-    ```
-    **Response Description (In order)**
+```
+**Response Description (In order)**
 
-    |Field|Description|
-    |--------|:-:|
-    |Execution Price |0.00329999|
-    |Volume |10.99999999|
-    |Maker Side|Buy|
-    |Timestamp| 1524801032573|
-    |Transaction ID| 62|
+|Field|Description|
+|--------|-----|
+|Execution Price |0.00329999|
+|Volume |10.99999999|
+|Maker Side|Buy|
+|Timestamp| 1524801032573|
+|Transaction ID| 62|
 
-    **Request Paramters**
+**Request Paramters**
 
-    |Name|Type|Required|Description|
-    |-|:---:|:-:|:-:|
-    |code|String|Y|Trading pair, e.g. btc-usdt|
+|Name|Type|Required|Description| 
+|-----|-----|-----|-----| 
+|code|String|Y|Trading pair, e.g. btc-usdt|
 
     **Explanation**
 
@@ -366,65 +367,65 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
 
 ### 5. Access Candlestick chart
 
-    **HTTP Request**
+**HTTP Request**
 
-    ```http
+```http
     # Request
     GET  /api/v1/spot/public/products/<code>/candles?type=1min&start=start_time&end=end_time
-    ```
-    ```javascript
+```
+```javascript
     # Response
     {
         [ 1415398768, 0.32, 0.42, 0.36, 0.41, 12.3 ]
         ...
     }
-    ```
+```
 
-    **Response Details (in order)**
+**Response Details (in order)**
     
-    |Field|Description|
-    |-|:-:|
-    |Start timestamp|1415398768|
-    |The lowest price|0.32|
-    |The highest price|0.42|
-    |Opening price|0.36|
-    |Closing price|0.41|
+|Field|Description|
+|-----|-----|
+|Start timestamp|1415398768|
+|The lowest price|0.32|
+|The highest price|0.42|
+|Opening price|0.36|
+|Closing price|0.41|
 
-    **Request parameters**
+**Request parameters**
     
-    |Name|Type|Required|Description|
-    |-|:-:|:-:|:-:|
-    |code|String|Y|Trading pair, e.g.btc-usdt|
-    |type|String|Y|Candlestick chart period type, e.g.1min/1hour/day/week/month|
-    |start|String|Y|Opening time based on ISO 8601|
-    |end|String|Y|Closing time based on ISO 8601|
+|Name|Type|Required|Description|
+|-----|-----|-----|-----|
+|code|String|Y|Trading pair, e.g.btc-usdt|
+|type|String|Y|Candlestick chart period type, e.g.1min/1hour/day/week/month|
+|start|String|Y|Opening time based on ISO 8601|
+|end|String|Y|Closing time based on ISO 8601|
 
 ### 6. Access Server Time
 
     Access API server time. This interface does not require ID authentication.
 
-    **HTTP Request**
-    ```http
+**HTTP Request**
+```http
     # Request
     
     GET /api/v1/spot/time
-    ```
+```
     
-    ```javascript
+```javascript
     # Reponse
 
     {
         "iso": "2015-01-07T23:47:25.201Z",
         "epoch": 1524801032573
     }
-    ```
+```
     
-    **Response Description**
+**Response Description**
     
-    |Field|Description|
-    |--|:-:|
-    |iso|server time expressed in time string by ISO 8061|
-    |epoch|server time expressed in timestamp|
+|Field|Description|  
+|------|-----|  
+|iso|server time expressed in time string by ISO 8061|
+|epoch|server time expressed in timestamp|
 
        iso: Response is returned in time string by ISO 8061
        epoch: Response is retured in timestamp
@@ -437,12 +438,12 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
 
     Access the list of balance, inquiry of coin balances, freezing status and available fund in spot account.
 
-    **HTTP Request**
-    ```
+**HTTP Request**
+```
     # Request
     GET /api/v1/spot/ccex/account/assets
-    ```
-    ```
+```
+```
     # Response
     [
         {
@@ -460,109 +461,109 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
             "id":1
         }
     ]
-    ```
+```
 
-    **Response Details**
+**Response Details**
 
-    |Field|Description|
-    |-|:-:|
-    |available|Avaliable Fund|
-    |balance|Number of coins in balance|
-    |currencyCode|Coin symbol|
-    |frozen|Frozen fund|
-    |id|Account ID|
+|Field|Description|
+|-----|-----|
+|available|Avaliable Fund|
+|balance|Number of coins in balance|
+|currencyCode|Coin symbol|
+|frozen|Frozen fund|
+|id|Account ID|
 
 ### 2. Order Placement
 
     There are two categrories of orders that can be placed on CoinMEX -- limit order and market order.
 
-    **HTTP Request**
-    ```
+**HTTP Request**
+```
     # Request
 
     POST /api/v1/spot/ccex/orders
-    ```
+```
 
-    ```javascript
+```javascript
     # Response
 
     {
         "result": true,
         "order_id": 123456
     }
-    ```
+```
     
     **Response Details**
 
     + orderId: Order ID
     + result: the result of the order placed
 
-    **Request Paramters**
+**Request Paramters**
 
-    |Name| Type | Required | Description |
-    |:----:|:----:|:---:|:--:|
-    |code|String|Y|Trading pair, e.g.btc-usdt|
-    |side|String|N|buy or sell|
-    |type|String|Y|limit order or market order|
-    |size|String|N|delivered when a limit order or selling market order if placed,representing the number of coins for trading|
-    |price|String|N|delivered when a limit order is placed, representing the price of the pair
-    |funds|String|N|delievered then a market order is placed, representing the number of quote currencies
+|Name| Type | Required | Description |
+|----|----|-----|-----|
+|code|String|Y|Trading pair, e.g.btc-usdt|
+|side|String|N|buy or sell|
+|type|String|Y|limit order or market order|
+|size|String|N|delivered when a limit order or selling market order if placed,representing the number of coins for trading|
+|price|String|N|delivered when a limit order is placed, representing the price of the pair
+|funds|String|N|delievered then a market order is placed, representing the number of quote currencies
 
 
 ### 3. Cancel all orders
 
     Cancel all unfilled orders of the target trading pair.
 
-    **HTTP Request**
-    ```
+**HTTP Request**
+```
     # Request
     DELETE /api/v1/spot/ccex/orders
-    ```
-    ```javascript
+```
+```javascript
     # Response
 
     { ...}
-    ```
+```
 
-    **Request Paramters**
+**Request Paramters**
 
-    Name|Paramters|Type|Description
-    -|:-:| :-:| :-:|
-    code|String|Y|Trading pairs, e.g. btc-usdt
+|Name|Paramters|Type|Description|
+|----|-----| -----| -----|
+|code|String|Y|Trading pairs, e.g. btc-usdt|
 
 ### 4. Cancel a specified order
 
-    **Cancel a specified order by order ID**
+    Cancel a specified order by order ID
 
-    **HTTP Request**
+**HTTP Request**
 
-    ```http
+```http
     # Request
     DELETE /api/v1/spot/ccex/orders/orderId
-    ```
-    ```javascript
+```
+```javascript
     # Response
     {...}
-    ```
+```
 
-    **Request Paramters**
+**Request Paramters**
 
-    Name|Type|Required|Description|
-    -|:-:|:-:|:-:|
-    code|String|Y|Trading Pair, e.g. btc-usdt|
-    orderId|String|Y|The ID of an unfilled order specified need to be cancelled
+|Name|Type|Required|Description|
+|-----|-----|-----|-----|
+|code|String|Y|Trading Pair, e.g. btc-usdt|
+|orderId|String|Y|The ID of an unfilled order specified need to be cancelled|
 
 ### 5. Search orders
 
     Check all the orders by order status.
     
-    **HTTP Request**
+**HTTP Request**
 
-    ```http   
+```http   
     # Request
     POST /api/v1/spot/ccex/orders?code=eth_btc&status=open
-    ```
-    ```javascript
+```
+```javascript
     # Response
     {
         "averagePrice": "0",
@@ -577,40 +578,40 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
         "status": "canceled",
         "volume": "1"
     }
-    ```
+```
 
-    **Response Details**
+**Response Details**
 
-    |Field|Description|
-    -|:-:|
-    averagePrice|average price for the filled orders; 0 for the unfilled orders|
-    code|Trading pair, e.g.btc-usdt
-    createDate|Timestamp upon the placement of the order
-    filledVolume|the volume of the filled orders
-    funds|the amount of the filled
-    orderId|Order ID
-    price|Price set for the order
-    side|Order direction
-    status|Order Status
-    volume|Volume of coins in the order placed
+|Field|Description|
+|-----|-----|
+|averagePrice|average price for the filled orders; 0 for the unfilled orders|
+|code|Trading pair, e.g.btc-usdt|
+|createDate|Timestamp upon the placement of the order|
+|filledVolume|the volume of the filled orders|
+|funds|the amount of the filled|
+|orderId|Order ID|
+|price|Price set for the order|
+|side|Order direction|
+|status|Order Status|
+|volume|Volume of coins in the order placed|
 
-    **请求参数**
+**请求参数**
 
-    Name | Type | Required | Description |
-    -|:-:|:-:|:-:|
-    code|String|Y|Trading pair, e.g.btc-usdt
-    status|String|Y| Order Status:open,filled,canceled,cancel,partially-filled
+|Name | Type | Required | Description |
+|------|-----|-----|-----|
+|code|String|Y|Trading pair, e.g.btc-usdt|
+|status|String|Y| Order Status:open,filled,canceled,cancel,partially-filled|
 
 ### 6. Order inquiry by Order ID
 
     Inquiry of a specified order by order ID
 
-    **HTTP Request**
-    ```http
+**HTTP Request**
+```http
     # Request
     POST /api/v1/spot/ccex/orders/9887828?code=chp-eth
-    ```
-    ```javascript
+```
+```javascript
     # Response 
     {
         "averagePrice":"0",
@@ -625,40 +626,40 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
         "status":"canceled",
         "volume":"1"
     }
-    ```
+```
 
-    **Response Details**
+**Response Details**
     
-    |Field|Description|
-    -|:-:|
-    averagePrice|average price for the filled orders; 0 for the unfilled orders|
-    code|Trading pair, e.g.btc-usdt
-    createDate|Timestamp upon the placement of the order
-    filledVolume|the volume of the filled orders
-    funds|the amount of the filled
-    orderId|Order ID
-    price|Price set for the order
-    side|Order direction
-    status|Order Status
-    volume|Volume of coins in the order placed
+|Field|Description|
+|------|-----|
+|averagePrice|average price for the filled orders; 0 for the unfilled orders|
+|code|Trading pair, e.g.btc-usdt|
+|createDate|Timestamp upon the placement of the order|
+|filledVolume|the volume of the filled orders|
+|funds|the amount of the filled|
+|orderId|Order ID|
+|price|Price set for the order|
+|side|Order direction|
+|status|Order Status|
+|volume|Volume of coins in the order placed|
 
-    **Request Paramters**
+**Request Paramters**
     
-    |Name|Type|Required|Description
-    -|:-:|:-:|:-:
-    code|String|Y|Trading pair, e.g.btc-usdt
-    orderId|String|Y|Order Id
+|Name|Type|Required|Description
+|-----|-----|-----|-----
+|code|String|Y|Trading pair, e.g.btc-usdt|
+|orderId|String|Y|Order Id|
 
 ### 7. Access the account statement
 
     Access the statement of a spot account
 
-    **HTTP Request**
-    ```http
+**HTTP Request**
+```http
     # Request
     GET /api/v1/spot/ccex/account/assets/eth/ledger
-    ```
-    ```javascript
+```
+```javascript
     # Response
     {
         "amount": "0.00106415",
@@ -671,49 +672,51 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
         "id": 27826010,
         "type": "buy"
     }
-    ```
+```
 
-    **Response Details**
+**Response Details**
 
-    |Field | Description |
-    |:--:|:-:|
-    amount|Volume of coins traded on the statement|
-    balance|Statement balance
-    createdDate|Timestamp on the statement taking place
-    details|Statement Details
-    orderId|Order ID
-    productId|Product ID
-    id|Statement ID
-    type|Transaction Type
+|Field | Description |
+|-----|-----|
+|amount|Volume of coins traded on the statement|
+|balance|Statement balance|
+|createdDate|Timestamp on the statement taking place|
+|details|Statement Details|
+|orderId|Order ID|
+|productId|Product ID|
+|id|Statement ID|
+|type|Transaction Type|
 
-    **Request Paramters**
-    Name|Type|Required|Description|
-    ----|:---:|:-:|:-:|
-    code|String|Y| Trading pair, e.g.btc-usdt
+**Request Paramters**
+
+|Name|Type|Required|Description|
+|----|-----|-----|-----|
+|code|String|Y| Trading pair, e.g.btc-usdt|
 
 ### 8. Withdrawal
 
     Withdraw to your wallet address.
 
-    **HTTP Request**
+**HTTP Request**
 
-    ```http
+```http
     # Request
     POST /api/v1/spot/ccex/account/withdraw
-    ```
-    ```javascript
+```
+```javascript
     # Response
     { ... }
-    ```
+```
 
-    **Request Parameters**
+**Request Parameters**
 
-    |Name|Type|Required|Description
-    |-|:-:|:-:|:-:|
-    currencyCode|String|Y|Name of coin to be withdrawn, e.g.BTC
-    amount|String|Y|Withdraw amount
-    address|String|Y| Withdraw address
-    ```
+|Name|Type|Required|Description
+|-----|-----|-----|-----|
+|currencyCode|String|Y|Name of coin to be withdrawn, e.g.BTC|
+|amount|String|Y|Withdraw amount|
+|address|String|Y| Withdraw address|
+
+
     
 [CoinMEX]: http://www.coinmex.com 
 [简体中文版文档]: https://github.com/coinmex/coinmex-official-api-docs/blob/master/README_ZH_CN.md
