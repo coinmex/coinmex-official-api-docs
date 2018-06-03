@@ -1,6 +1,6 @@
-coinmex-official-api-docs
+CoinMEX-official-api-docs
 ============================================
-Official Documentation for the [coinmex][] APIs and Streams([简体中文版文档][])
+Official Documentation for the [CoinMEX][] APIs and Streams([简体中文版文档][])
 
 <!-- TOC -->
 
@@ -700,5 +700,5 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
     address|String|Y| Withdraw address
     ```
     
-[coinmex]: https://www.coinmex.com 
+[CoinMEX]: https://www.coinmex.com 
 [简体中文版文档]: https://github.com/coinmex/coinmex-official-api-docs/blob/master/README_ZH_CN.md
