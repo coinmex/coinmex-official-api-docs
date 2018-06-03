@@ -81,7 +81,7 @@ API Key 和 Secret 将由随机生成和提供。
 ## 签名
 ACCESS-SIGN的请求头是对 **timestamp + method + requestPath + body** 字符串(+表示字符串连接)使用 **HMAC SHA256** 方法加密，通过**BASE64** 编码输出而得到的。其中，timestamp 的值与 ACCESS-TIMESTAMP 请求头相同。
 
-* method 是请求方法，字母全部大写。
+* method 是请求方法(POST/GET/PUT/DELETE)，字母全部大写。
 * requestPath 是请求接口路径。
 * body 是指请求主体的字符串，如果请求没有主体(通常为GET请求)则body可省略。
 
@@ -89,10 +89,10 @@ ACCESS-SIGN的请求头是对 **timestamp + method + requestPath + body** 字符
 
 ```java
 Timestamp = 1590000000.28
-Method = "/spot/ccex/orders"
-requestPath = "https://www.coinmex.com/api/v1"
+Method = "GET"
+requestPath = "https://www.coinmex.com/api/v1/spot/ccex/orders"
 body = {
-    "symbol=btc_cny",
+    "code=btc-usdt",
     "type=buy",
     "price=680",
     "amount=1.0"
@@ -101,7 +101,7 @@ body = {
 
 生成待签名的字符串 
 ```
-Message = '1590000000.28/spot/ccex/ordershttps://www.coinmex.com/api/v1'+body.decode('utf-8')
+Message = '1590000000.28/GEThttps://www.coinmex.com/api/v1/spot/ccex/orders'+body.encode('utf-8')
 ```
 
 然后，将待签名字符串添加私钥参数生成最终待签名字符串。
@@ -540,7 +540,7 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 
 |参数名|参数|类型|必填描述|
 |----|----| ----| ----|
-|code|String|是|币对, 如 btc_usdt|
+|code|String|是|币对, 如 btc-usdt|
 
 ### 4. 按订单撤销委托
 
@@ -561,7 +561,7 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 
 |参数名|参数类型|必填|描述|
 |---|----|----|----|
-|code|String|是|币对,如 btc_usdt|
+|code|String|是|币对,如 btc-usdt|
 |orderId|String|是|需要撤销的未成交委托的id
 
 ### 5. 查询所有订单
@@ -578,7 +578,7 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
     # Response
     {
         "averagePrice": "0",
-        "code": "CHP_ETH",
+        "code": "chp-eth",
         "createdDate": 1526299182000,
         "filledVolume": "0",
         "funds": "0",
@@ -596,7 +596,7 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 |返回字段|字段说明|
 |----|----|
 |averagePrice|订单已成交部分均价，如果未成交则为0|
-|code|币对如btc_usdt|
+|code|币对如btc-usdt|
 |createDate|创建订单的时间戳|
 |filledVolume|订单已成交数量|
 |funds|订单已成交金额|
@@ -610,7 +610,7 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 
 |参数名 | 参数类型 | 必填 | 描述 |
 |---|----|----|----|
-| code|String|是|币对如btc_usdt|
+| code|String|是|币对如btc-usdt|
 |status|String|是| 订单状态，﻿open（未成交）、filled（已完成）、canceled（已撤销）、cancel（撤销中）、partially-filled（部分成交）|
 
 ### 6. 按id查询订单
@@ -620,13 +620,13 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 **HTTP请求**
 ```http
     # Request
-    POST /api/v1/spot/ccex/orders/﻿9887828?code=chp_eth
+    POST /api/v1/spot/ccex/orders/﻿9887828?code=chp-eth
 ```
 ```javascript
     # Response 
     {
         "averagePrice":"0",
-        "code":"CHP_ETH",
+        "code":"chp-eth",
         "createdDate":9887828,
         "filledVolume":"0",
         "funds":"0",
@@ -644,7 +644,7 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 |返回字段|字段说明|
 |-----|----|
 |averagePrice|订单已成交部分均价，如果未成交则为0|
-|code|币对如btc_usdt|
+|code|币对如btc-usdt|
 |createDate|创建订单的时间戳|
 |filledVolume|订单已成交数量|
 |funds|订单已成交金额|
@@ -658,7 +658,7 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
     
 |参数名|参数类型|必填|描述|
 |-----|----|----|----|
-|code|String|是|币对，如 btc_usdt|
+|code|String|是|币对，如 btc-usdt|
 |orderId|String|是|订单Id|
 
 ### 7. 获取账单
@@ -702,7 +702,7 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
     
 |参数名|参数类型|必填|描述|
 |----|---|---|---|
-|code|String|是| 币对, 如 btc_usdt|
+|code|String|是| 币对, 如 btc-usdt|
 
 ### 8. 提现
 

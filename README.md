@@ -90,27 +90,28 @@ User submitted parameters must be signed except for sign. First, the string to b
 **For example, if we sign the following parameters**
 
 ```java
-string[] parameters = {
-    "api_key=c821db84-6fbd-11e4-a9e3-c86000d26d7c",
-    "symbol=btc_cny",
+Timestamp = 1590000000.28
+Method = "GET"
+requestPath = "https://www.coinmex.com/api/v1/spot/ccex/orders"
+body = {
+    "code=btc-usdt",
     "type=buy",
     "price=680",
     "amount=1.0"
 };
 ```
 
-Generate the string to be signed 
+Generate the string to be signed   
 ```
-amount=1.0&api_key=c821db84-6fbd-11e4-a9e3-c86000d26d7c&price=680&symbol=btc_cny&type=buy
+Message = '1590000000.28/GEThttps://www.coinmex.com/api/v1/spot/ccex/orders'+body.encode('utf-8')
 ```
 Then, the character to be signed is added with the private key parameters to generate the final character string to be signed.
 
 For example:
 ```
-amount=1.0&api_key=c821db84-6fbd-11e4-a9e3-c86000d26d7c&price=680&symbol=btc_cny&type=buy&secret_key=secretKey
+hmac = hmac(secretkey, Message, SHA256)
+Signature = base64.encode(hmac.digest())
 ```
-
-Note that "&secret_key=secretKey" is a signature passable parameter. Finally, a 32-bit MD5 algorithm is used to perform a signature operation on the final string to be signed, thereby obtaining a signature result string (this string is assigned to the parameter sign). In the MD5 calculation result, letters are all capitalized.
 
 ## Select timestamp
 
@@ -311,7 +312,7 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
 
     |Name|Type|Required|Description|
     |------|:-:|:---:|:---:|
-    |code|String|Y|Trading Pair, e.g. btc_usdt|
+    |code|String|Y|Trading Pair, e.g. btc-usdt|
 
 ### 4. Access the market trading records of a trading pair
 
@@ -355,7 +356,7 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
 
     |Name|Type|Required|Description|
     |-|:---:|:-:|:-:|
-    |code|String|Y|Trading pair, e.g. btc_usdt|
+    |code|String|Y|Trading pair, e.g. btc-usdt|
 
     **Explanation**
 
@@ -393,7 +394,7 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
     
     |Name|Type|Required|Description|
     |-|:-:|:-:|:-:|
-    |code|String|Y|Trading pair, e.g.btc_usdt|
+    |code|String|Y|Trading pair, e.g.btc-usdt|
     |type|String|Y|Candlestick chart period type, e.g.1min/1hour/day/week/month|
     |start|String|Y|Opening time based on ISO 8601|
     |end|String|Y|Closing time based on ISO 8601|
@@ -500,7 +501,7 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
 
     |Name| Type | Required | Description |
     |:----:|:----:|:---:|:--:|
-    |code|String|Y|Trading pair, e.g.btc_usdt|
+    |code|String|Y|Trading pair, e.g.btc-usdt|
     |side|String|N|buy or sell|
     |type|String|Y|limit order or market order|
     |size|String|N|delivered when a limit order or selling market order if placed,representing the number of coins for trading|
@@ -527,7 +528,7 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
 
     Name|Paramters|Type|Description
     -|:-:| :-:| :-:|
-    code|String|Y|Trading pairs, e.g. btc_usdt
+    code|String|Y|Trading pairs, e.g. btc-usdt
 
 ### 4. Cancel a specified order
 
@@ -548,7 +549,7 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
 
     Name|Type|Required|Description|
     -|:-:|:-:|:-:|
-    code|String|Y|Trading Pair, e.g. btc_usdt|
+    code|String|Y|Trading Pair, e.g. btc-usdt|
     orderId|String|Y|The ID of an unfilled order specified need to be cancelled
 
 ### 5. Search orders
@@ -565,7 +566,7 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
     # Response
     {
         "averagePrice": "0",
-        "code": "CHP_ETH",
+        "code": "chp-eth",
         "createdDate": 1526299182000,
         "filledVolume": "0",
         "funds": "0",
@@ -583,7 +584,7 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
     |Field|Description|
     -|:-:|
     averagePrice|average price for the filled orders; 0 for the unfilled orders|
-    code|Trading pair, e.g.btc_usdt
+    code|Trading pair, e.g.btc-usdt
     createDate|Timestamp upon the placement of the order
     filledVolume|the volume of the filled orders
     funds|the amount of the filled
@@ -597,7 +598,7 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
 
     Name | Type | Required | Description |
     -|:-:|:-:|:-:|
-    code|String|Y|Trading pair, e.g.btc_usdt
+    code|String|Y|Trading pair, e.g.btc-usdt
     status|String|Y| Order Status:open,filled,canceled,cancel,partially-filled
 
 ### 6. Order inquiry by Order ID
@@ -607,13 +608,13 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
     **HTTP Request**
     ```http
     # Request
-    POST /api/v1/spot/ccex/orders/9887828?code=chp_eth
+    POST /api/v1/spot/ccex/orders/9887828?code=chp-eth
     ```
     ```javascript
     # Response 
     {
         "averagePrice":"0",
-        "code":"CHP_ETH",
+        "code":"chp-eth",
         "createdDate":9887828,
         "filledVolume":"0",
         "funds":"0",
@@ -631,7 +632,7 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
     |Field|Description|
     -|:-:|
     averagePrice|average price for the filled orders; 0 for the unfilled orders|
-    code|Trading pair, e.g.btc_usdt
+    code|Trading pair, e.g.btc-usdt
     createDate|Timestamp upon the placement of the order
     filledVolume|the volume of the filled orders
     funds|the amount of the filled
@@ -645,7 +646,7 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
     
     |Name|Type|Required|Description
     -|:-:|:-:|:-:
-    code|String|Y|Trading pair, e.g.btc_usdt
+    code|String|Y|Trading pair, e.g.btc-usdt
     orderId|String|Y|Order Id
 
 ### 7. Access the account statement
@@ -688,7 +689,7 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
     **Request Paramters**
     Name|Type|Required|Description|
     ----|:---:|:-:|:-:|
-    code|String|Y| Trading pair, e.g.btc_usdt
+    code|String|Y| Trading pair, e.g.btc-usdt
 
 ### 8. Withdrawal
 
