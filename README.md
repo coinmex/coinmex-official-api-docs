@@ -22,7 +22,21 @@ Official Documentation for the [CoinMEX][] APIs and Streams([简体中文版文�
         - [REST API](#rest-api)
 - [API Reference](#api-reference)
     - [Spot Market API](#spot-market-api)
+        - [1. Access the list of all trading pairs](#1-access-the-list-of-all-trading-pairs)
+        - [2. Access the depth table of trading pairs](#2-access-the-depth-table-of-trading-pairs)
+        - [3. Access the ticker of a trading pair](#3-access-the-ticker-of-a-trading-pair)
+        - [4. Access the market trading records of a trading pair](#4-access-the-market-trading-records-of-a-trading-pair)
+        - [5. Access Candlestick chart](#5-access-candlestick-chart)
+        - [6. Access Server Time](#6-access-server-time)
     - [Spot Account API](#spot-account-api)
+        - [1. Access account information](#1-access-account-information)
+        - [2. Order Placement](#2-order-placement)
+        - [3. Cancel all orders](#3-cancel-all-orders)
+        - [4. Cancel a specified order](#4-cancel-a-specified-order)
+        - [5. Search orders](#5-search-orders)
+        - [6. Order inquiry by Order ID](#6-order-inquiry-by-order-id)
+        - [7. Access the account statement](#7-access-the-account-statement)
+        - [8. Withdrawal](#8-withdrawal)
 
 <!-- /TOC -->
 # Introduction
@@ -176,7 +190,7 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
 
 ## Spot Market API
 
-1.  Access the list of all trading pairs
+### 1. Access the list of all trading pairs
 
     **HTTP Request**
 
@@ -217,7 +231,7 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
     | base_max_size   | Maximum Transaction Volume |
     | quote_increment | Minimum Precision |
 
-2. Access the depth table of trading pairs
+### 2. Access the depth table of trading pairs
 
     **HTTP Request**
 
@@ -257,7 +271,7 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
     | ------------- |:--:|:--:|:--:|
     | Code | String | Y | Trading Pair, e.g. ltc_btc |
 
-3. Access the ticker of a trading pair
+### 3. Access the ticker of a trading pair
 
     **HTTP Request**
 
@@ -299,7 +313,7 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
     |------|:-:|:---:|:---:|
     |code|String|Y|Trading Pair, e.g. btc_usdt|
 
-4. Access the market trading records of a trading pair
+### 4. Access the market trading records of a trading pair
 
     The request supports pagination.
 
@@ -349,7 +363,7 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
 
     + Buy suggests price fall, because the maker places a buy order and the order is executed, the price falls; in contrary, sell suggests price rise, because the maker places a sell order and the order is executed, the price rises.
 
-5. Access Candlestick chart
+### 5. Access Candlestick chart
 
     **HTTP Request**
 
@@ -384,7 +398,7 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
     |start|String|Y|Opening time based on ISO 8601|
     |end|String|Y|Closing time based on ISO 8601|
 
-6. Access Server Time
+### 6. Access Server Time
 
     Access API server time. This interface does not require ID authentication.
 
@@ -418,7 +432,7 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
 
 ## Spot Account API
 
-1. Access account information
+### 1. Access account information
 
     Access the list of balance, inquiry of coin balances, freezing status and available fund in spot account.
 
@@ -457,7 +471,7 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
     |frozen|Frozen fund|
     |id|Account ID|
 
-2. Order Placement
+### 2. Order Placement
 
     There are two categrories of orders that can be placed on CoinMEX -- limit order and market order.
 
@@ -494,7 +508,7 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
     |funds|String|N|delievered then a market order is placed, representing the number of quote currencies
 
 
-3. Cancel all orders
+### 3. Cancel all orders
 
     Cancel all unfilled orders of the target trading pair.
 
@@ -515,7 +529,7 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
     -|:-:| :-:| :-:|
     code|String|Y|Trading pairs, e.g. btc_usdt
 
-4. Cancel a specified order
+### 4. Cancel a specified order
 
     **Cancel a specified order by order ID**
 
@@ -537,7 +551,7 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
     code|String|Y|Trading Pair, e.g. btc_usdt|
     orderId|String|Y|The ID of an unfilled order specified need to be cancelled
 
-5. Search orders
+### 5. Search orders
 
     Check all the orders by order status.
     
@@ -586,7 +600,7 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
     code|String|Y|Trading pair, e.g.btc_usdt
     status|String|Y| Order Status:open,filled,canceled,cancel,partially-filled
 
-6. Order inquiry by Order ID
+### 6. Order inquiry by Order ID
 
     Inquiry of a specified order by order ID
 
@@ -634,7 +648,7 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
     code|String|Y|Trading pair, e.g.btc_usdt
     orderId|String|Y|Order Id
 
-7. Access the account statement
+### 7. Access the account statement
 
     Access the statement of a spot account
 
@@ -676,7 +690,7 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
     ----|:---:|:-:|:-:|
     code|String|Y| Trading pair, e.g.btc_usdt
 
-8. Withdrawal
+### 8. Withdrawal
 
     Withdraw to your wallet address.
 
