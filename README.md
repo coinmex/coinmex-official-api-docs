@@ -1,6 +1,6 @@
 coinmex-official-api-docs
 ============================================
-Official Documentation for the [coinmex][] APIs and Streams
+Official Documentation for the [coinmex][] APIs and Streams([简体中文版文档][])
 
 <!-- TOC -->
 
@@ -26,7 +26,7 @@ Official Documentation for the [coinmex][] APIs and Streams
 
 <!-- /TOC -->
 # Introduction
-Welcome to CoinMEX API document([简体中文版文档][]) for developers.
+Welcome to CoinMEX API document for developers.
 
 This document provides instructions on how to use APIs related to account management, market information, trading functions among others in spot trading.
 
