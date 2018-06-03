@@ -195,13 +195,13 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 
 ### 1. 获取所有币对列表
 
-    **HTTP请求**
+**HTTP请求**
 
-    ```http
+```http
     # Request
     GET /api/v1/spot/public/products
-    ```
-    ```javascript
+```
+```javascript
     # Response
     [
         {
@@ -221,11 +221,11 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
         },
         ...
     ]
-    ```
+```
 
-    返回值说明
+**返回值说明**
 
-    | 返回字段 | 字段说明|
+| 返回字段 | 字段说明|
     | ----------|:-------:|
     | code            | 币对代码|
     | base_currency   | 基础币 |
@@ -238,13 +238,13 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 
     获取币对盘口深度的请求列表。
 
-    **HTTP请求**
+**HTTP请求**
 
-    ```http
+```http
     # Request
     GET /api/v1/spot/public/products/<code>/orderbook
-    ```
-    ```javascript
+```
+```javascript
     # Response
     {
         "asks":[
@@ -262,32 +262,32 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
             ...
         ]
     }
-    ```
-    **返回值说明**
+```
+**返回值说明**  
 
-    |返回字段|字段说明|
-    | ------------- |:-:|
-    | asks | 卖方深度 |
-    | bids | 买方深度 |
+|返回字段|字段说明|  
+| ------------- |:-:|
+| asks | 卖方深度 |
+| bids | 买方深度 |
 
-    **请求参数**
+**请求参数**
 
-    | 参数名 | 参数类型  | 必填 | 描述 |
-    | ------------- |:--:|:--:|:--:|
-    | Code | String | 是 | 币对, 如 ltc_btc |
+| 参数名 | 参数类型  | 必填 | 描述 |
+| ------------- |:--:|:--:|:--:|
+| Code | String | 是 | 币对, 如 ltc_btc |
 
 ### 3. 获取币对Ticker
 
-    **HTTP请求**
+**HTTP请求**
 
     最新成交、24h最高、24h最低和24h成交量的快照信息。
 
-    ```http
+```http
     # Request
     GET /api/v1/spot/public/products/<code>/ticker
-    ```
+```
 
-    ```javascript
+```javascript
     # Response
     [
         1527066527725,
@@ -298,12 +298,12 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
         "8249.9494",
         "7845.2459"
     ]
-    ```
+```
 
-    **返回值说明（从上到下按顺序)**
+**返回值说明（从上到下按顺序)**
 
  
-    |返回字段|字段说明|
+|返回字段|字段说明|
     |--------| :-------: |
     |时间戳| 1527066527725 |
     |24h 最高|8275.1844|
@@ -325,12 +325,12 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 
     获取所请求交易对的历史成交信息，该请求支持分页。
 
-    **HTTP请求**
-    ```http
+**HTTP请求**
+```http
     # Request
     GET /api/v1/spot/public/products/<code>/fills
-    ```
-    ```javascript
+```
+```javascript
     # Response
     [
         [
@@ -348,11 +348,11 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
             62
         ]
     ]
-    ```
+```
 
     **返回值说明（按顺序）**
 
-    |返回字段|字段说明|
+|返回字段|字段说明|
     |--------|:-:|
     |成交价格 |0.00329999|
     |成交量 |10.99999999|
@@ -374,24 +374,24 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 
 ### 5. 获取K线数据
 
-    **HTTP请求**
+**HTTP请求**
 
-    ```http
+```http
     # Request
     GET  /api/v1/spot/public/products/<code>/candles?type=1min&start=start_time&end=end_time
-    ```
+```
     
-    ```javascript
+```javascript
     # Response
     {
         [ 1415398768, 0.32, 0.42, 0.36, 0.41, 12.3 ]
         ...
     }
-    ```
+```
 
     **返回值说明（按顺序）**
     
-    |返回字段|字段说明|
+|返回字段|字段说明|
     |-|:-:|
     |K线开始时间戳|1415398768|
     |最低价|0.32|
@@ -412,25 +412,25 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 
     获取API服务器的时间的接口。此接口不需要身份验证。
 
-    **HTTP请求**
-    ```http
+**HTTP请求**
+```http
     # Request
     
     GET /api/v1/spot/time
-    ```
+```
     
-    ```javascript
+```javascript
     # Reponse
 
     {
         "iso": "2015-01-07T23:47:25.201Z",
         "epoch": 1524801032573
     }
-    ```
+```
     
-    **返回值说明**
+**返回值说明**
     
-    |返回字段|字段说明|
+|返回字段|字段说明|
     |--|:-:|
     |iso|为iso 8061标准的时间字符串表达的服务器时间|
     |epoch|时间戳形式表达的服务器时间|
@@ -448,13 +448,13 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 
     获取币币交易账户余额列表，查询各币种的余额，冻结和可用情况
 
-    **HTTP请求**
+**HTTP请求**
 
-    ```
+```
     # Request
     GET /api/v1/spot/ccex/account/assets
-    ```
-    ```
+```
+```
     # Response
     [
         {
@@ -472,11 +472,11 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
             "id":1
         }
     ]
-    ```
+```
 
-    **返回值说明**
+**返回值说明**
 
-    |返回字段|字段说明|
+|返回字段|字段说明|
     |-|:-:|
     |available|可用资金|
     |balance|币种数量|
@@ -488,23 +488,23 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 
     CoinMEX 提供限价和市价两种订单类型。
 
-    **HTTP请求**
-    ```
+**HTTP请求**
+```
     # Request
 
     POST /api/v1/spot/ccex/orders
-    ```
+```
 
-    ```javascript
+```javascript
     # Response
 
     {
         "result": true,
         "order_id": 123456
     }
-    ```
+```
     
-    **返回值说明**
+**返回值说明**
 
     + orderId: 订单ID
     + result: 下单结果
@@ -525,16 +525,16 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 
     撤销目标币对下所有未成交委托。
 
-    **HTTP请求**
-    ```
+**HTTP请求**
+```
     # Request
     DELETE /api/v1/spot/ccex/orders
-    ```
-    ```javascript
+```
+```javascript
     # Response
 
     { ...}
-    ```
+```
 
     **请求参数**
 
@@ -546,16 +546,16 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 
     **按照订单id撤销指定订单。**
 
-    **HTTP请求**
+**HTTP请求**
 
-    ```http
+```http
     # Request
     DELETE /api/v1/spot/ccex/orders/orderId
-    ```
-    ```javascript
+```
+```javascript
     # Response
     {...}
-    ```
+```
 
     **请求参数**
 
@@ -568,13 +568,13 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 
     按照订单状态查询所有订单。
     
-    **HTTP请求**
+**HTTP请求**
 
-    ```http   
+```http   
     # Request
     POST /api/v1/spot/ccex/orders?code=eth_btc&status=open
-    ```
-    ```javascript
+```
+```javascript
     # Response
     {
         "averagePrice": "0",
@@ -589,11 +589,11 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
         "status": "canceled",
         "volume": "1"
     }
-    ```
+```
 
-    **返回值说明**
+**返回值说明**
 
-    |返回字段|字段说明|
+|返回字段|字段说明|
     -|:-:|
     averagePrice|订单已成交部分均价，如果未成交则为0|
     code|币对如btc_usdt
@@ -617,12 +617,12 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 
     按照订单id查询指定订单。
 
-    **HTTP请求**
-    ```http
+**HTTP请求**
+```http
     # Request
     POST /api/v1/spot/ccex/orders/﻿9887828?code=chp_eth
-    ```
-    ```javascript
+```
+```javascript
     # Response 
     {
         "averagePrice":"0",
@@ -637,11 +637,11 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
         "status":"canceled",
         "volume":"1"
     }
-    ```
+```
 
-    **返回值说明**
+**返回值说明**
     
-    |返回字段|字段说明|
+|返回字段|字段说明|
     |-|:-:|
     averagePrice|订单已成交部分均价，如果未成交则为0|
     code|币对如btc_usdt
@@ -665,12 +665,12 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 
     获取币币交易账户账单
 
-    **HTTP请求**
-    ```http
+**HTTP请求**
+```http
     # Request
     GET /api/v1/spot/ccex/account/assets/eth/ledger
-    ```
-    ```javascript
+```
+```javascript
     # Response
     {
         "amount": "0.00106415",
@@ -683,11 +683,11 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
         "id": 27826010,
         "type": "buy"
     }
-    ```
+```
 
-    **返回值说明**
+**返回值说明**
 
-    |返回字段 | 字段说明 |
+|返回字段 | 字段说明 |
     |:--:|:-:|
     amount|账单发生数量|
     balance|账单资产余额
@@ -706,18 +706,19 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 
 ### 8. 提现
 
-    提现到钱包地址
+提现到钱包地址
 
-    **HTTP请求**
+**HTTP请求**
 
-    ```http
+```http
     # Request
     POST /api/v1/spot/ccex/account/withdraw
-    ```
-    ```javascript
+```
+    
+```javascript
     # Response
     { ... }
-    ```
+```
 
     **请求参数**
 
@@ -726,7 +727,7 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
     currencyCode|String|是|提现币种名称如BTC
     amount|String|是|提现数量
     address|String|是|提现地址
-    ```
+```
 
 [CoinMEX]: http://www.coinmex.com 
 [English Docs]: https://github.com/coinmex/coinmex-official-api-docs/blob/master/README.md
