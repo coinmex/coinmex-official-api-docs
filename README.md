@@ -26,7 +26,7 @@ Official Documentation for the [CoinMEX][] APIs and Streams([简体中文版文�
 
 <!-- /TOC -->
 # Introduction
-Welcome to CoinMEX API document for developers.
+Welcome to [CoinMEX][] API document for developers.
 
 This document provides instructions on how to use APIs related to account management, market information, trading functions among others in spot trading.
 
@@ -215,7 +215,7 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
     | quote_currency  | Quote currency |
     | base_min_size   | Minimum Transaction Volume |
     | base_max_size   | Maximum Transaction Volume |
-    | quote_increment | Minimum Precision |
+    | quote_increment | Minimum Precision |
 
 2. Access the depth table of trading pairs
 
@@ -700,5 +700,5 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
     address|String|Y| Withdraw address
     ```
     
-[CoinMEX]: https://www.coinmex.com 
+[CoinMEX]: http://www.coinmex.com 
 [简体中文版文档]: https://github.com/coinmex/coinmex-official-api-docs/blob/master/README_ZH_CN.md

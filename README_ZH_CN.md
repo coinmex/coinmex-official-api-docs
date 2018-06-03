@@ -28,7 +28,7 @@ CoinMEX交易所官方API文档
 
 # 介绍
 
-欢迎使用CoinMEX开发者文档。
+欢迎使用[CoinMEX][]开发者文档。
 
 本文档提供了现货(Spot)业务的账户管理、行情查询、交易功能等相关API的使用方法介绍。
 行情API提供市场的公开的行情数据接口，账户和交易API需要身份验证，提供下单、撤单，查询订单和帐户信息等功能。
@@ -714,5 +714,5 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
     address|String|是|提现地址
     ```
 
-[coinmex]: http://www.coinmex.com 
+[CoinMEX]: http://www.coinmex.com 
 [English Docs]: https://github.com/coinmex/coinmex-official-api-docs/blob/master/README.md
