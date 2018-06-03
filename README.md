@@ -20,7 +20,7 @@ Official Documentation for the [CoinMEX][] APIs and Streams([简体中文版文�
         - [Numbers](#numbers)
     - [Access Restriction](#access-restriction)
         - [REST API](#rest-api)
-- [API Reference](#api-reference)
+- [Spot API Reference](#spot-api-reference)
     - [Spot Market API](#spot-market-api)
         - [1. Access the list of all trading pairs](#1-access-the-list-of-all-trading-pairs)
         - [2. Access the depth table of trading pairs](#2-access-the-depth-table-of-trading-pairs)
@@ -186,7 +186,7 @@ In order to maintain the accuracy of cross-platform, decimal numbers are returne
 
 * Special restrictions on specified interfaces are specified.
 
-# API Reference
+# Spot API Reference
 
 
 ## Spot Market API
