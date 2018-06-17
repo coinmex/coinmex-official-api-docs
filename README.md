@@ -99,14 +99,14 @@ curl "https://www.coinmex.com/api/v1/spot/ccex/orders?limit=100"
 ```java
 Timestamp = 1590000000.281
 Method = "GET"
-requestPath = "https://www.coinmex.com/api/v1/spot/ccex/orders"
+requestPath = "/api/v1/spot/ccex/orders"
 queryString= "?limit=100"
 body = ""
 ```
 
 Generate the string to be signed   
 ```
-Message = '1590000000.28/GET/api/v1/spot/ccex/orders?limit=100'
+Message = '1590000000.281/GET/api/v1/spot/ccex/orders?limit=100'
 ```
 Then, the character to be signed is added with the private key parameters to generate the final character string to be signed.
 

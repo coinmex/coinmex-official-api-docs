@@ -95,7 +95,7 @@ curl "https://www.coinmex.com/api/v1/spot/ccex/orders?limit=100"
 ```java
 Timestamp = 1590000000.281 
 Method = "GET"
-requestPath = "https://www.coinmex.com/api/v1/spot/ccex/orders"
+requestPath = "/api/v1/spot/ccex/orders"
 queryString= "?limit=100"
 body = ""
 ```
