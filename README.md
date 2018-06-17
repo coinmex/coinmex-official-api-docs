@@ -179,7 +179,9 @@ Unless otherwise specified, all timestamps in APIs are returned in microseconds.
 In order to maintain the accuracy of cross-platform, decimal numbers are returned as strings. We suggest that you might be better to convert the number to string when issuing the request to avoid truncation and precision errors. Integers (such as transaction number and sequence) do not need quotation marks.
 
 
-## Access Restriction
+## Rate Limits
+
+When a rate limit is exceeded, a status of 429 Too Many Requests will be returned.
 
 ### REST API
 
