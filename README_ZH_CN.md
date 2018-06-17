@@ -79,29 +79,30 @@ API Key 和 Secret 将由随机生成和提供。
 * 所有请求都应该含有application/json类型内容，并且是有效的JSON。
 
 ## 签名
-ACCESS-SIGN的请求头是对 **timestamp + method + requestPath + body** 字符串(+表示字符串连接)使用 **HMAC SHA256** 方法加密，通过**BASE64** 编码输出而得到的。其中，timestamp 的值与 ACCESS-TIMESTAMP 请求头相同。
+ACCESS-SIGN的请求头是对 **timestamp + method + requestPath + "?" + queryString + body** 字符串(+表示字符串连接)使用 **HMAC SHA256** 方法加密，通过**BASE64** 编码输出而得到的。其中，timestamp 的值与 ACCESS-TIMESTAMP 
+请求头相同。
 
 * method 是请求方法(POST/GET/PUT/DELETE)，字母全部大写。
 * requestPath 是请求接口路径。
 * body 是指请求主体的字符串，如果请求没有主体(通常为GET请求)则body可省略。
 
-**例如：对于如下的参数进行签名**
+**例如：对于如下的请求参数进行签名**
+
+```bash
+curl "https://www.coinmex.com/api/v1/spot/ccex/orders?limit=100"       
+```
 
 ```java
-Timestamp = 1590000000.28
+Timestamp = 1590000000.281 
 Method = "GET"
 requestPath = "https://www.coinmex.com/api/v1/spot/ccex/orders"
-body = {
-    "code=btc-usdt",
-    "type=buy",
-    "price=680",
-    "amount=1.0"
-};
+queryString= "?limit=100"
+body = ""
 ```
 
 生成待签名的字符串 
 ```
-Message = '1590000000.28/GEThttps://www.coinmex.com/api/v1/spot/ccex/orders'+body.encode('utf-8')
+Message = '1590000000.281/GET/api/v1/spot/ccex/orders'
 ```
 
 然后，将待签名字符串添加私钥参数生成最终待签名字符串。
