@@ -18,8 +18,8 @@ Official Documentation for the [CoinMEX][] APIs and Streams([简体中文版文�
         - [Timestamp](#timestamp)
         - [For example,](#for-example)
         - [Numbers](#numbers)
-    - [Access Restriction](#access-restriction)
-        - [REST API](#rest-api)
+        - [Rate Limits](#rate-limits)
+            - [REST API](#rest-api)
 - [Spot API Reference](#spot-api-reference)
     - [Spot Market API](#spot-market-api)
         - [1. Access the list of all trading pairs](#1-access-the-list-of-all-trading-pairs)
@@ -178,12 +178,11 @@ Unless otherwise specified, all timestamps in APIs are returned in microseconds.
 
 In order to maintain the accuracy of cross-platform, decimal numbers are returned as strings. We suggest that you might be better to convert the number to string when issuing the request to avoid truncation and precision errors. Integers (such as transaction number and sequence) do not need quotation marks.
 
-
-## Rate Limits
+### Rate Limits
 
 When a rate limit is exceeded, a status of 429 Too Many Requests will be returned.
 
-### REST API
+#### REST API
 
 * Public interface: We limit the invocation of public interface via IP: up to 6 requests every 2s.
 
@@ -192,7 +191,6 @@ When a rate limit is exceeded, a status of 429 Too Many Requests will be returne
 * Special restrictions on specified interfaces are specified.
 
 # Spot API Reference
-
 
 ## Spot Market API
 
