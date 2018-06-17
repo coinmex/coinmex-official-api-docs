@@ -84,6 +84,7 @@ ACCESS-SIGN的请求头是对 **timestamp + method + requestPath + "?" + querySt
 
 * method 是请求方法(POST/GET/PUT/DELETE)，字母全部大写。
 * requestPath 是请求接口路径。
+* queryString GET请求中的查询字符串
 * body 是指请求主体的字符串，如果请求没有主体(通常为GET请求)则body可省略。
 
 **例如：对于如下的请求参数进行签名**
