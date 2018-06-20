@@ -120,7 +120,7 @@ Signature = base64.encode(Signature.digest())
 
 ## 选择时间戳 
 
-该 ACCESS-TIMESTAMP 头必须是从UTC的时间的Unix Epoch开始的秒数。十进制值是允许的。 您的时间戳必须在api服务时间的30秒内，否则您的请求将被视为过期并被拒绝。如果您认为服务器和API服务器之间存在较大的时间偏差，那么我们建议您使用时间点来查询API服务器时间。
+该 ACCESS-TIMESTAMP 头必须是从UTC的时间的[Unix Epoch]开始的秒数。十进制值是允许的。 您的时间戳必须在api服务时间的30秒内，否则您的请求将被视为过期并被拒绝。如果您认为服务器和API服务器之间存在较大的时间偏差，那么我们建议您使用时间点来查询API服务器时间。
 
 ## 请求交互  
 
@@ -735,3 +735,4 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 
 [CoinMEX]: https://www.coinmex.com 
 [English Docs]: https://github.com/coinmex/coinmex-official-api-docs/blob/master/README.md
+[Unix Epoch]: https://en.wikipedia.org/wiki/Unix_time

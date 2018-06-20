@@ -75,7 +75,7 @@ All REST requests must include the following headings:
 
 * ACCESS-KEY api key as a string.
 * ACCESS-SIGN uses base64-encoded signatures (see Signed Messages).
-* ACCESS-TIMESTAMP is the timestamp of your request.
+* ACCESS-TIMESTAMP is the timestamp of your request.header MUST be number of seconds since Unix Epoch in UTC. Decimal values are allowed.
 * ACCESS-PASSPHRASE is the password you specified when you generate the API key. 
 * All requests should contain content like application/json and be valid JSON.
 
@@ -118,7 +118,8 @@ Signature = base64.encode(hmac.digest())
 
 ## Select timestamp
 
-The ACCESS-TIMESTAMP header must be the number of seconds since UTC's time Unix Epoch. Decimal values are allowed. Your timestamp must be within 30 seconds of the API service time, otherwise your request will be considered expired and rejected. If you think there is a large time difference between your server and the API server, then we recommend that you use the time point to check the API server time.
+The ACCESS-TIMESTAMP header must be the number of seconds since UTC's time [Unix Epoch]. Decimal values are allowed. Your timestamp must be within 30 seconds of the API service 
+time, otherwise your request will be considered expired and rejected. If you think there is a large time difference between your server and the API server, then we recommend that you use the time point to check the API server time.
 
 ## Request Process 
   
@@ -723,3 +724,4 @@ When a rate limit is exceeded, a status of 429 Too Many Requests will be returne
     
 [CoinMEX]: https://www.coinmex.com 
 [简体中文版文档]: https://github.com/coinmex/coinmex-official-api-docs/blob/master/README_ZH_CN.md
+[Unix Epoch]: https://en.wikipedia.org/wiki/Unix_time
