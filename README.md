@@ -118,7 +118,7 @@ Signature = base64.encode(hmac.digest())
 
 ## Select timestamp
 
-The ACCESS-TIMESTAMP header must be the number of seconds since UTC's time [Unix Epoch]. Decimal values are allowed. Your timestamp must be within 30 seconds of the API service 
+The ACCESS-TIMESTAMP header must be the number of seconds since UTC's time [Unix Epoch][]. Decimal values are allowed. Your timestamp must be within 30 seconds of the API service 
 time, otherwise your request will be considered expired and rejected. If you think there is a large time difference between your server and the API server, then we recommend that you use the time point to check the API server time.
 
 ## Request Process 
