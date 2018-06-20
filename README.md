@@ -75,7 +75,7 @@ All REST requests must include the following headings:
 
 * ACCESS-KEY api key as a string.
 * ACCESS-SIGN uses base64-encoded signatures (see Signed Messages).
-* ACCESS-TIMESTAMP is the timestamp of your request.header MUST be number of seconds since Unix Epoch in UTC. Decimal values are allowed.
+* ACCESS-TIMESTAMP is the timestamp of your request.header MUST be number of seconds since [Unix Epoch][] in UTC. Decimal values are allowed.
 * ACCESS-PASSPHRASE is the password you specified when you generate the API key. 
 * All requests should contain content like application/json and be valid JSON.
 
