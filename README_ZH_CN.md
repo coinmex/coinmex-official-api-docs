@@ -496,7 +496,7 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 ```
     # Request
 
-    POST /api/v1/spot/ccex/orders
+    GET /api/v1/spot/ccex/orders
 ```
 
 ```javascript
