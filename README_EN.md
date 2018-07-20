@@ -723,5 +723,5 @@ When a rate limit is exceeded, a status of 429 Too Many Requests will be returne
 
     
 [CoinMEX]: https://www.coinmex.com 
-[简体中文版文档]: https://github.com/coinmex/coinmex-official-api-docs/blob/master/README_ZH_CN.md
+[简体中文版文档]: https://github.com/coinmex/coinmex-official-api-docs/blob/master/README.md
 [Unix Epoch]: https://en.wikipedia.org/wiki/Unix_time
