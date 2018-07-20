@@ -212,14 +212,14 @@ When a rate limit is exceeded, a status of 429 Too Many Requests will be returne
             "baseMinSize":"0.001",
             "code":"LTC_BTC",
             "quoteCurrency":"BTC",
-            "quoteIncrement":"0"
+            "quoteIncrement":"0.00000001"
         },
         {	"baseCurrency":"ETH",
             "baseMaxSize":"100000.00",
             "baseMinSize":"0.001",
             "code":"ETH_BTC",
             "quoteCurrency":"BTC",
-            "quoteIncrement":"0"
+            "quoteIncrement":"0.00000001"
         },
         ...
     ]
