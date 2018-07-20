@@ -103,7 +103,7 @@ body = ""
 
 生成待签名的字符串 
 ```
-Message = '1590000000.281/GET/api/v1/spot/ccex/orders?limit=100'
+Message = '1590000000.281GET/api/v1/spot/ccex/orders?limit=100'
 ```
 
 然后，将待签名字符串添加私钥参数生成最终待签名字符串。
