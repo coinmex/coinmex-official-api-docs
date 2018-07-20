@@ -565,7 +565,7 @@ When a rate limit is exceeded, a status of 429 Too Many Requests will be returne
 
 ```http   
     # Request
-    POST /api/v1/spot/ccex/orders?code=eth_btc&status=open
+    GET /api/v1/spot/ccex/orders?code=eth_btc&status=open
 ```
 ```javascript
     # Response
