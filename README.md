@@ -734,5 +734,5 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
   
 
 [CoinMEX]: https://www.coinmex.com 
-[English Docs]: https://github.com/coinmex/coinmex-official-api-docs/blob/master/README.md
+[English Docs]: https://github.com/coinmex/coinmex-official-api-docs/blob/master/README_EN.md
 [Unix Epoch]: https://en.wikipedia.org/wiki/Unix_time
