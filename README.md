@@ -576,7 +576,7 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 
 ```http   
     # Request
-    POST /api/v1/spot/ccex/orders?code=eth_btc&status=open
+    GET /api/v1/spot/ccex/orders?code=eth_btc&status=open
 ```
 ```javascript
     # Response
