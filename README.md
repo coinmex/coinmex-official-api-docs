@@ -544,7 +544,7 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 
 |参数名|参数|类型|必填描述|
 |----|----| ----| ----|
-|code|String|是|币对, 如 btc-usdt|
+|code|String|是|币对, 如 btc_usdt|
 
 ### 4. 按订单撤销委托
 
@@ -565,7 +565,7 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 
 |参数名|参数类型|必填|描述|
 |---|----|----|----|
-|code|String|是|币对,如 btc-usdt|
+|code|String|是|币对,如 btc_usdt|
 |orderId|String|是|需要撤销的未成交委托的id
 
 ### 5. 查询所有订单
@@ -600,7 +600,7 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 |返回字段|字段说明|
 |----|----|
 |averagePrice|订单已成交部分均价，如果未成交则为0|
-|code|币对如btc-usdt|
+|code|币对如btc_usdt|
 |createDate|创建订单的时间戳|
 |filledVolume|订单已成交数量|
 |funds|订单已成交金额|
@@ -614,7 +614,7 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 
 |参数名 | 参数类型 | 必填 | 描述 |
 |---|----|----|----|
-| code|String|是|币对如btc-usdt|
+| code|String|是|币对如btc_usdt|
 |status|String|是| 订单状态，﻿open（未成交）、filled（已完成）、canceled（已撤销）、cancel（撤销中）、partially-filled（部分成交）|
 
 ### 6. 按id查询订单
@@ -648,7 +648,7 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 |返回字段|字段说明|
 |-----|----|
 |averagePrice|订单已成交部分均价，如果未成交则为0|
-|code|币对如btc-usdt|
+|code|币对如btc_usdt|
 |createDate|创建订单的时间戳|
 |filledVolume|订单已成交数量|
 |funds|订单已成交金额|
@@ -662,7 +662,7 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
     
 |参数名|参数类型|必填|描述|
 |-----|----|----|----|
-|code|String|是|币对，如 btc-usdt|
+|code|String|是|币对，如 btc_usdt|
 |orderId|String|是|订单Id|
 
 ### 7. 获取账单
@@ -706,7 +706,7 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
     
 |参数名|参数类型|必填|描述|
 |----|---|---|---|
-|code|String|是| 币对, 如 btc-usdt|
+|code|String|是| 币对, 如 btc_usdt|
 
 ### 8. 提现
 
