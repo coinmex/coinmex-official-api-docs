@@ -485,7 +485,7 @@ When a rate limit is exceeded, a status of 429 Too Many Requests will be returne
 ```
     # Request
 
-    GET /api/v1/spot/ccex/orders
+    POST /api/v1/spot/ccex/orders
 ```
 
 ```javascript
