@@ -214,14 +214,18 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
             "baseMinSize":"0.001",
             "code":"LTC_BTC",
             "quoteCurrency":"BTC",
-            "quoteIncrement":"0"
+            "quoteIncrement":"0.00000001"
+            "quotePrecision":"8",
+            "volumeIncrement":"8"
         },
         {  "baseCurrency":"ETH",
             "baseMaxSize":"100000.00",
             "baseMinSize":"0.001",
             "code":"ETH_BTC",
             "quoteCurrency":"BTC",
-            "quoteIncrement":"0"
+            "quoteIncrement":"0.00000001"
+            "quotePrecision":"8",
+            "volumeIncrement":"8"
         },
         ...
     ]
@@ -233,11 +237,13 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 |返回字段 | 字段说明|
 | ----------|:-------:|
 | code            | 币对代码|
-| base_currency   | 基础币 |
-| quote_currency  | 计价币 |
-| base_min_size   | 最小交易量 |
-| base_max_size   | 最大交易量 |
-| quote_increment | 最小报价单位 |
+| baseCurrency   | 基础币 |
+| quoteCurrency  | 计价币 |
+| baseMinSize   | 最小委托量 |
+| baseMaxSize   | 最大委托量 |
+| quoteIncrement | 最小报价单位 |
+| quotePrecision | 报价精度 |
+| volumeIncrement | 委托变动单位 |
 
 ### 2. 获取币对交易深度
 
