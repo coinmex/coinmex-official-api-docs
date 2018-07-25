@@ -106,7 +106,7 @@ body = ""
 
 Generate the string to be signed   
 ```
-Message = '1590000000.281/GET/api/v1/spot/ccex/orders?limit=100'
+Message = '1590000000.281GET/api/v1/spot/ccex/orders?limit=100'
 ```
 Then, the character to be signed is added with the private key parameters to generate the final character string to be signed.
 
@@ -212,14 +212,18 @@ When a rate limit is exceeded, a status of 429 Too Many Requests will be returne
             "baseMinSize":"0.001",
             "code":"LTC_BTC",
             "quoteCurrency":"BTC",
-            "quoteIncrement":"0.00000001"
+            "quoteIncrement":"0.00000001"，
+            "quotePrecision":"8",
+            "volumeIncrement":"8"
         },
         {	"baseCurrency":"ETH",
             "baseMaxSize":"100000.00",
             "baseMinSize":"0.001",
             "code":"ETH_BTC",
             "quoteCurrency":"BTC",
-            "quoteIncrement":"0.00000001"
+            "quoteIncrement":"0.00000001"，
+            "quotePrecision":"8",
+            "volumeIncrement":"8"
         },
         ...
     ]
@@ -230,11 +234,13 @@ When a rate limit is exceeded, a status of 429 Too Many Requests will be returne
 | Field | Descirption |
 | ----------|:-------:|
 | code        | Trading pair code |
-| base_currency   | Base currency |
-| quote_currency  | Quote currency |
-| base_min_size   | Minimum Transaction Volume |
-| base_max_size   | Maximum Transaction Volume |
-| quote_increment | Minimum Precision |
+| baseCurrency   | Base currency |
+| quoteCurrency  | Quote currency |
+| baseMinSize   | Minimum Transaction Volume |
+| baseMaxSize   | Maximum Transaction Volume |
+| quoteIncrement | Ticker Size |
+| quotePrecision | Quote Precision |
+| volumeIncrement | Volume Increase Size |
 
 ### 2. Access the depth table of trading pairs
 
