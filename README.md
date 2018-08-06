@@ -588,7 +588,7 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
     # Response
     {
         "averagePrice": "0",
-        "code": "chp-eth",
+        "code": "chp_eth",
         "createdDate": 1526299182000,
         "filledVolume": "0",
         "funds": "0",
@@ -636,7 +636,7 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
     # Response 
     {
         "averagePrice":"0",
-        "code":"chp-eth",
+        "code":"chp_eth",
         "createdDate":9887828,
         "filledVolume":"0",
         "funds":"0",
