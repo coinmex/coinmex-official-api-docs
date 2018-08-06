@@ -323,7 +323,7 @@ When a rate limit is exceeded, a status of 429 Too Many Requests will be returne
 
 |Name|Type|Required|Description| 
 |------|-----|-----|-----|
-|code|String|Y|Trading Pair, e.g. btc-usdt|
+|code|String|Y|Trading Pair, e.g. btc_usdt|
 
 ### 4. Access the market trading records of a trading pair
 
@@ -367,7 +367,7 @@ When a rate limit is exceeded, a status of 429 Too Many Requests will be returne
 
 |Name|Type|Required|Description| 
 |-----|-----|-----|-----| 
-|code|String|Y|Trading pair, e.g. btc-usdt|
+|code|String|Y|Trading pair, e.g. btc_usdt|
 
     **Explanation**
 
@@ -405,7 +405,7 @@ When a rate limit is exceeded, a status of 429 Too Many Requests will be returne
     
 |Name|Type|Required|Description|
 |-----|-----|-----|-----|
-|code|String|Y|Trading pair, e.g.btc-usdt|
+|code|String|Y|Trading pair, e.g.btc_usdt|
 |type|String|Y|Candlestick chart period type, e.g.1min/1hour/day/week/month|
 |start|String|Y|Opening time based on ISO 8601|
 |end|String|Y|Closing time based on ISO 8601|
@@ -512,7 +512,7 @@ When a rate limit is exceeded, a status of 429 Too Many Requests will be returne
 
 |Name| Type | Required | Description |
 |----|----|-----|-----|
-|code|String|Y|Trading pair, e.g.btc-usdt|
+|code|String|Y|Trading pair, e.g.btc_usdt|
 |side|String|N|buy or sell|
 |type|String|Y|limit order or market order|
 |size|String|N|delivered when a limit order or selling market order if placed,representing the number of coins for trading|
@@ -539,7 +539,7 @@ When a rate limit is exceeded, a status of 429 Too Many Requests will be returne
 
 |Name|Paramters|Type|Description|
 |----|-----| -----| -----|
-|code|String|Y|Trading pairs, e.g. btc-usdt|
+|code|String|Y|Trading pairs, e.g. btc_usdt|
 
 ### 4. Cancel a specified order
 
@@ -560,7 +560,7 @@ When a rate limit is exceeded, a status of 429 Too Many Requests will be returne
 
 |Name|Type|Required|Description|
 |-----|-----|-----|-----|
-|code|String|Y|Trading Pair, e.g. btc-usdt|
+|code|String|Y|Trading Pair, e.g. btc_usdt|
 |orderId|String|Y|The ID of an unfilled order specified need to be cancelled|
 
 ### 5. Search orders
@@ -595,7 +595,7 @@ When a rate limit is exceeded, a status of 429 Too Many Requests will be returne
 |Field|Description|
 |-----|-----|
 |averagePrice|average price for the filled orders; 0 for the unfilled orders|
-|code|Trading pair, e.g.btc-usdt|
+|code|Trading pair, e.g.btc_usdt|
 |createDate|Timestamp upon the placement of the order|
 |filledVolume|the volume of the filled orders|
 |funds|the amount of the filled|
@@ -609,7 +609,7 @@ When a rate limit is exceeded, a status of 429 Too Many Requests will be returne
 
 |Name | Type | Required | Description |
 |------|-----|-----|-----|
-|code|String|Y|Trading pair, e.g.btc-usdt|
+|code|String|Y|Trading pair, e.g.btc_usdt|
 |status|String|Y| Order Status:open,filled,canceled,cancel,partially-filled|
 
 ### 6. Order inquiry by Order ID
@@ -625,7 +625,7 @@ When a rate limit is exceeded, a status of 429 Too Many Requests will be returne
     # Response 
     {
         "averagePrice":"0",
-        "code":"chp-eth",
+        "code":"chp_eth",
         "createdDate":9887828,
         "filledVolume":"0",
         "funds":"0",
@@ -643,7 +643,7 @@ When a rate limit is exceeded, a status of 429 Too Many Requests will be returne
 |Field|Description|
 |------|-----|
 |averagePrice|average price for the filled orders; 0 for the unfilled orders|
-|code|Trading pair, e.g.btc-usdt|
+|code|Trading pair, e.g.btc_usdt|
 |createDate|Timestamp upon the placement of the order|
 |filledVolume|the volume of the filled orders|
 |funds|the amount of the filled|
@@ -657,7 +657,7 @@ When a rate limit is exceeded, a status of 429 Too Many Requests will be returne
     
 |Name|Type|Required|Description
 |-----|-----|-----|-----
-|code|String|Y|Trading pair, e.g.btc-usdt|
+|code|String|Y|Trading pair, e.g.btc_usdt|
 |orderId|String|Y|Order Id|
 
 ### 7. Access the account statement
@@ -701,7 +701,7 @@ When a rate limit is exceeded, a status of 429 Too Many Requests will be returne
 
 |Name|Type|Required|Description|
 |----|-----|-----|-----|
-|code|String|Y| Trading pair, e.g.btc-usdt|
+|code|String|Y| Trading pair, e.g.btc_usdt|
 
 ### 8. Withdrawal
 
