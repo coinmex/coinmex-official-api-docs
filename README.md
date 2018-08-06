@@ -630,7 +630,7 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 **HTTP请求**
 ```http
     # Request
-    POST /api/v1/spot/ccex/orders/﻿9887828?code=chp-eth
+    GET /api/v1/spot/ccex/orders/﻿9887828?code=chp_eth
 ```
 ```javascript
     # Response 
