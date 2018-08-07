@@ -101,12 +101,19 @@ Timestamp = 1590000000.281
 Method = "GET"
 requestPath = "/api/v1/spot/ccex/orders"
 queryString= "?limit=100"
-body = ""
+body = {
+            'code': 'ct_usdt',
+            'side': 'buy',
+            'type': 'limit',
+            'size': '1',
+            'price': '1',
+            'funds': '',
+        }
 ```
 
 Generate the string to be signed   
 ```
-Message = '1590000000.281GET/api/v1/spot/ccex/orders?limit=100'
+Message = '1590000000Message = '1590000000.281GET/api/v1/spot/ccex/orders?limit=100{"code": "ct_usdt", "side": "buy", "type": "limit", "size": "1", "price": "0.1", "funds": ""}'
 ```
 Then, the character to be signed is added with the private key parameters to generate the final character string to be signed.
 
