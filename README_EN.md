@@ -432,8 +432,9 @@ When a rate limit is exceeded, a status of 429 Too Many Requests will be returne
     # Reponse
 
     {
+        "epoch": "1524801032.573"
         "iso": "2015-01-07T23:47:25.201Z",
-        "epoch": 1524801032573
+        "timestamp": 1524801032573
     }
 ```
     
@@ -441,8 +442,9 @@ When a rate limit is exceeded, a status of 429 Too Many Requests will be returne
     
 |Field|Description|  
 |------|-----|  
+|epoch|server time expressed in second|
 |iso|server time expressed in time string by ISO 8061|
-|epoch|server time expressed in timestamp|
+|timestamp|server time expressed in millisecond|
 
        iso: Response is returned in time string by ISO 8061
        epoch: Response is retured in timestamp
