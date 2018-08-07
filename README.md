@@ -74,7 +74,7 @@ API Key 和 Secret 将由随机生成和提供。
 
 * ACCESS-KEY api key作为一个字符串。
 * ACCESS-SIGN 使用base64编码签名（请参阅签名消息）。
-* ACCESS-TIMESTAMP 作为您的请求的时间戳。http header必须是从UTC的时间的[Unix Epoch][]开始的秒数
+* ACCESS-TIMESTAMP 作为您的请求的时间戳。
 * ACCESS-PASSPHRASE 您在创建API密钥时设置的口令。
 * 所有请求都应该含有application/json类型内容，并且是有效的JSON。
 
@@ -125,9 +125,9 @@ Signature = hmac(secretkey, Message, SHA256)
 Signature = base64.encode(Signature.digest())
 ```
 
-## 选择时间戳 
+## 时间戳 
 
-该 ACCESS-TIMESTAMP http header必须是从UTC的时间的[Unix Epoch][]开始的秒数。十进制值是允许的。 您的时间戳必须在api服务时间的30秒内，否则您的请求将被视为过期并被拒绝。如果您认为服务器和API服务器之间存在较大的时间偏差，那么我们建议您使用时间点来查询API服务器时间。
+http header中的ACCESS-TIMESTAMP的单位是秒，允许用小数表示更精确的时间。请求的时间戳必须在api服务时间的30秒内，否则请求将被视为过期并被拒绝。如果本地服务器时间和API服务器时间之间存在较大的偏差，那么我们建议您使用通过查询API服务器时间来更新http header。
 
 ## 请求交互  
 
@@ -178,7 +178,7 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 
 ### 时间戳
 
-除非另外指定，API中的所有时间戳均以微秒为单位返回。
+除非另外指定，API中的所有时间戳均以秒为单位返回。
 
 ### 例子
 
