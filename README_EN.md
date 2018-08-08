@@ -63,17 +63,17 @@ Before signing any request, you must generate an API key via CoinMEX’s officia
 mind:
 * API Key
 
-* Secret
+* Secret Key
 
 * Passphrase
 
-API Key and Secret are randomly generated and provided.
+API Key and Secret are randomly generated and provided, Passphrase is set by user.
 
 ## Initiate a Request
 
 All REST requests must include the following headings:
 
-* ACCESS-KEY api key as a string.
+* ACCESS-KEY API Key as a string.
 * ACCESS-SIGN uses base64-encoded signatures (see Signed Messages).
 * ACCESS-TIMESTAMP is the timestamp of your request.header MUST be number of seconds since [Unix Epoch][] in UTC. Decimal values are allowed.
 * ACCESS-PASSPHRASE is the password you specified when you generate the API key. 
@@ -122,11 +122,6 @@ For example:
 hmac = hmac(secretkey, Message, SHA256)
 Signature = base64.encode(hmac.digest())
 ```
-
-## Select timestamp
-
-The ACCESS-TIMESTAMP header must be the number of seconds since UTC's time [Unix Epoch][]. Decimal values are allowed. Your timestamp must be within 30 seconds of the API service 
-time, otherwise your request will be considered expired and rejected. If you think there is a large time difference between your server and the API server, then we recommend that you use the time point to check the API server time.
 
 ## Request Process 
   
@@ -177,6 +172,9 @@ Cursor-based pagination allows results to be obtained before and after the curre
 ### Timestamp
 
 Unless otherwise specified, all timestamps in APIs are returned in microseconds.
+
+The ACCESS-TIMESTAMP header must be the number of seconds since UTC's time [Unix Epoch][]. Decimal values are allowed. 
+Your timestamp must be within 30 seconds of the API service time, otherwise your request will be considered expired and rejected. If you think there is a large time difference between your server and the API server, then we recommend that you use the time point to check the API server time.
 
 ### For example,
 
@@ -676,7 +674,7 @@ When a rate limit is exceeded, a status of 429 Too Many Requests will be returne
 **HTTP Request**
 ```http
     # Request
-    GET /api/v1/spot/ccex/account/assets/eth/ledger
+    GET /api/v1/spot/ccex/account/eth/ledger
 ```
 ```javascript
     # Response
