@@ -425,7 +425,7 @@ When a rate limit is exceeded, a status of 429 Too Many Requests will be returne
 ```http
     # Request
     
-    GET /api/v1/spot/time
+    GET /api/v1/spot/public/time
 ```
     
 ```javascript
