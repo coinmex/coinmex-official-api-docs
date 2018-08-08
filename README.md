@@ -62,17 +62,17 @@ REST，即Representational State Transfer的缩写，是一种流行的互联网
 在对任何请求进行签名之前，您必须通过 CoinMEX 网站【用户中心】-【API】创建一个API key。 创建key后，您将获得3个必须记住的信息：
 * API Key
 
-* Secret
+* Secret Key
 
 * Passphrase
 
-API Key 和 Secret 将由随机生成和提供。
+API Key 和 Secret Key将由随机生成和提供，Passphrase由用户自己设定。
 
 ## 发起请求
 
 所有REST请求都必须包含以下标题：
 
-* ACCESS-KEY api key作为一个字符串。
+* ACCESS-KEY API KEY作为一个字符串。
 * ACCESS-SIGN 使用base64编码签名（请参阅签名消息）。
 * ACCESS-TIMESTAMP 作为您的请求的时间戳。
 * ACCESS-PASSPHRASE 您在创建API密钥时设置的口令。
@@ -685,7 +685,7 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 **HTTP请求**
 ```http
     # Request
-    GET /api/v1/spot/ccex/account/assets/eth/ledger
+    GET /api/v1/spot/ccex/account/eth/ledger
 ```
 ```javascript
     # Response
@@ -719,7 +719,7 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
     
 |参数名|参数类型|必填|描述|
 |----|---|---|---|
-|code|String|是| 币对, 如 btc_usdt|
+|currencyCode|String|是| 币种代码，如btc|
 
 ### 8. 提现
 
