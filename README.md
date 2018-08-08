@@ -436,7 +436,7 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 ```http
     # Request
     
-    GET /api/v1/spot/time
+    GET /api/v1/spot/public/time
 ```
     
 ```javascript
