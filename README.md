@@ -94,7 +94,7 @@ curl "https://www.coinmex.com/api/v1/spot/ccex/orders?limit=100"
 ```
 
 ```java
-Timestamp = 1590000000.281 
+Timestamp = 1590000000000 
 Method = "POST"
 requestPath = "/api/v1/spot/ccex/orders"
 queryString= "?limit=100"
@@ -108,9 +108,10 @@ body = {
         }
 ```
 
-生成待签名的字符串 
+生成待签名的字符串
+
 ```
-Message = '1590000000.281GET/api/v1/spot/ccex/orders?limit=100{"code": "ct_usdt", "side": "buy", "type": "limit", "size": "1", "price": "0.1", "funds": ""}'
+Message = '1590000000000GET/api/v1/spot/ccex/orders?limit=100{"code": "ct_usdt", "side": "buy", "type": "limit", "size": "1", "price": "0.1", "funds": ""}'
 ```
 
 然后，将待签名字符串添加私钥参数生成最终待签名字符串。
