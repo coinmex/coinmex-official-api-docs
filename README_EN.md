@@ -1,6 +1,6 @@
-CoinMEX-official-api-docs
+CoinMex-official-api-docs
 ============================================
-Official Documentation for the [CoinMEX][] APIs and Streams([简体中文版文档][])
+Official Documentation for the [CoinMex][] APIs and Streams([简体中文版文档][])
 
 <!-- TOC -->
 
@@ -40,7 +40,7 @@ Official Documentation for the [CoinMEX][] APIs and Streams([简体中文版文�
 
 <!-- /TOC -->
 # Introduction
-Welcome to [CoinMEX][] API document for developers.
+Welcome to [CoinMex][] API document for developers.
 
 This document provides instructions on how to use APIs related to account management, market information, trading functions among others in spot trading.
 
@@ -59,7 +59,7 @@ Developers are recommended to use REST API to proceed spot trading and withdrawa
 # Encrypted Verification of API
 ## Generate an API Key
 
-Before signing any request, you must generate an API key via CoinMEX’s official website 【User Center】- 【API】. After generating the key, there are three things you must bear in 
+Before signing any request, you must generate an API key via CoinMex’s official website 【User Center】- 【API】. After generating the key, there are three things you must bear in 
 mind:
 * API Key
 
@@ -492,7 +492,7 @@ When a rate limit is exceeded, a status of 429 Too Many Requests will be returne
 
 ### 2. Order Placement
 
-    There are two categrories of orders that can be placed on CoinMEX -- limit order and market order.
+    There are two categrories of orders that can be placed on CoinMex -- limit order and market order.
 
 **HTTP Request**
 ```
@@ -735,6 +735,6 @@ When a rate limit is exceeded, a status of 429 Too Many Requests will be returne
 
 
     
-[CoinMEX]: https://www.coinmex.com 
+[CoinMex]: https://www.coinmex.com 
 [简体中文版文档]: https://github.com/coinmex/coinmex-official-api-docs/blob/master/README.md
 [Unix Epoch]: https://en.wikipedia.org/wiki/Unix_time
