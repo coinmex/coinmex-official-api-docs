@@ -1,6 +1,6 @@
-CoinMEX交易所官方API文档
+CoinMex交易所官方API文档
 ==================================================
-[CoinMEX][]交易所开发者文档([English Docs][])。
+[CoinMex][]交易所开发者文档([English Docs][])。
 
 <!-- TOC -->
 
@@ -42,7 +42,7 @@ CoinMEX交易所官方API文档
 
 # 介绍
 
-欢迎使用[CoinMEX][]开发者文档。
+欢迎使用[CoinMex][]开发者文档。
 
 本文档提供了现货(Spot)业务的账户管理、行情查询、交易功能等相关API的使用方法介绍。
 行情API提供市场的公开的行情数据接口，账户和交易API需要身份验证，提供下单、撤单，查询订单和帐户信息等功能。
@@ -137,7 +137,7 @@ REST访问的根URL：`https://www.coinmex.com`
 
 1、请求参数：根据接口请求参数规定进行参数封装。
 
-2、提交请求参数：将封装好的请求参数通过POST/GET/PUT/DELETE等方式提交至服务器。
+2、提交请求参数：将封装好的请求参数通过POST/GET/DELETE等方式提交至服务器。
 
 3、服务器响应：服务器首先对用户请求数据进行参数安全校验，通过校验后根据业务逻辑将响应数据以JSON格式返回给用户。
 
@@ -164,7 +164,7 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 ### 分页
 
 所有返回数据集的REST请求支持使用游标分页。
-游标分页允许在结果的当前页面之前和之后获取结果，并且非常适合于实时数据。根据当前的返回结果，后续请求可以在此基础之上指定请求数据的方向，可以请求在这之前和之后的数据。before和after游标可通过响应头CB-BEFORE和CB-AFTER使用。
+游标分页允许在结果的当前页面之前和之后获取结果，并且非常适合于实时数据。根据当前的返回结果，后续请求可以在此基础之上指定请求数据的方向，可以请求在这之前和之后的数据。before和after游标可通过响应头CB_BEFORE和CB_AFTER使用。
 
 **例子**
 
@@ -503,7 +503,7 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 
 ### 2. 交易委托
 
-    CoinMEX 提供限价和市价两种订单类型。
+    CoinMex 提供限价和市价两种订单类型。
 
 **HTTP请求**
 ```
@@ -746,6 +746,6 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 |address|String|是|提现地址|
   
 
-[CoinMEX]: https://www.coinmex.com 
+[CoinMex]: https://www.coinmex.com 
 [English Docs]: https://github.com/coinmex/coinmex-official-api-docs/blob/master/README_EN.md
 [Unix Epoch]: https://en.wikipedia.org/wiki/Unix_time
