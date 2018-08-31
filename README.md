@@ -479,14 +479,14 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
             "available":"0.1",
             "balance":"0.1",
             "currencyCode":"ETH",
-            "frozen":"0",
+            "hold":"0",
             "id":1
         },
         {
             "available":"1",
             "balance":"1",
             "currencyCode":"USDT",
-            "frozen":"0",
+            "hold":"0",
             "id":1
         }
     ]
@@ -499,7 +499,7 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 |available|可用资金|
 |balance|币种数量|
 |currencyCode|币种代码|
-|frozen|冻结资金|
+|hold|冻结资金|
 |id|账户ID|
 
 ### 2. 交易委托
