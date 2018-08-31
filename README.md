@@ -568,7 +568,7 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 
 ```http
     # Request
-    DELETE /api/v1/spot/ccex/orders/orderId
+    DELETE /api/v1/spot/ccex/orders/{orderId}
 ```
 ```javascript
     # Response
@@ -580,7 +580,7 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 |参数名|参数类型|必填|描述|
 |---|----|----|----|
 |code|String|是|币对,如 btc_usdt|
-|orderId|String|是|需要撤销的未成交委托的id
+|orderId|String|是|需要撤销的未成交委托的id（注：url 中的 orderId，如 ：/api/v1/spot/ccex/orders/10010）
 
 ### 5. 查询所有订单
 
