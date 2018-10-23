@@ -92,29 +92,38 @@ ACCESS-SIGN的请求头是对 **timestamp + method + requestPath + "?" + querySt
 ```bash
 curl "https://www.coinmex.com/api/v1/spot/ccex/orders?limit=100"       
 ```
-
+* 获取获取深度信息，以 LTC-BTC 币对为例
 ```java
-Timestamp = 1590000000000 
-Method = "POST"
-requestPath = "/api/v1/spot/ccex/orders"
-queryString= "?limit=100"
-body = {
-            'code': 'ct_usdt',
-            'side': 'buy',
-            'type': 'limit',
-            'size': '1',
-            'price': '1',
-            'funds': '',
-        }
+Timestamp = 1540286290170 
+Method = "GET"
+requestPath = "/api/v1/spot/public/products/LTC-BTC/orderbook"
+queryString= "?size=100"
+
 ```
 
 生成待签名的字符串
 
 ```
-Message = '1590000000000GET/api/v1/spot/ccex/orders?limit=100{"code": "ct_usdt", "side": "buy", "type": "limit", "size": "1", "price": "0.1", "funds": ""}'  
+Message = '1540286290170GET/api/v1/spot/public/products/LTC-BTC/orderbook?size=100'  
+```
+* 下单，以 LTC-BTC 币对为例
+
+```java
+Timestamp = 1540286476248 
+Method = "POST"
+requestPath = "/api/v1/spot/ccex/orders"
+body = {"code":"LTC_BTC","side":"buy","type":"limit","size":"1","price":"1.001"}
+
+```
+
+生成待签名的字符串
+
+```
+Message = '1540286476248POST/api/v1/spot/ccex/orders{"code":"LTC-BTC","side":"buy","type":"limit","size":"1","price":"1.001"}'  
 ```
 
 然后，将待签名字符串添加私钥参数生成最终待签名字符串。
+
 
 例如：
 ```
