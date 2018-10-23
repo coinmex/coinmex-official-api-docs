@@ -169,8 +169,9 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 
 * 429 Too Many Requests 请求太频繁被系统限流
 
-* 500 Internal Server Error – We had a problem with our server 服务器内部阻碍
+* 500 Internal Server Error – We had a problem with our server 服务器内部错误
 
+* 如果失败，response body 带有错误描述信息
 ### 分页
 
 部分返回数据集的REST请求支持使用游标分页。
