@@ -302,13 +302,13 @@ When a rate limit is exceeded, a status of 429 Too Many Requests will be returne
 ```javascript
     # Response
     [
-        1526268156264,
-        "8823.352",
-        "8121.9873",
-        "8749.9604",
-        "8260",
-        "8481",
-        "487.8924"
+        1527066527725,
+        "8275.1844",
+        "7783.8063",
+        "7845.2459",
+        "451.8678",
+        "8249.9494",
+        "7845.2459"
     ]
 ```
 
@@ -316,13 +316,13 @@ When a rate limit is exceeded, a status of 429 Too Many Requests will be returne
 
 |Field|Description|
 |--------| :-------: |
-|timestamp | 1526268156264 |
-| 24hr Highest|8823.352|
-| 24hr Lowest|8121.9873|
-| ask | 8749 |
-| bid |8260|
-|latest price|8481|
-|24h Vol|487.8924|
+| timestamp | 1527066527725 |
+| 24hr Highest|8275.1844|
+| 24hr Lowest|7783.8063|
+| latest price|7845.2459|
+| 24h Vol|451.8678|
+| 24h Open|8249.9494|
+| 24h Close|7845.2459|
 
 **Request Parameter**
 
