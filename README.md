@@ -90,7 +90,7 @@ ACCESS-SIGN的请求头是对 **timestamp + method + requestPath + "?" + querySt
 **例如：对于如下的请求参数进行签名**
 
 ```bash
-curl "https://www.coinmex.com/api/v1/spot/ccex/orders?limit=100"       
+curl "https://www.coinmex.pro/api/v1/spot/ccex/orders?limit=100"       
 ```
 * 获取获取深度信息，以 LTC-BTC 币对为例
 ```java
@@ -137,7 +137,7 @@ Signature = base64.encode(Signature.digest())
 
 ## 请求交互  
 
-REST访问的根URL：`https://www.coinmex.com`
+REST访问的根URL：`https://www.coinmex.pro`
 
 ### 请求
 
