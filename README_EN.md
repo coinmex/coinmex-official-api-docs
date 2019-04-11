@@ -93,7 +93,7 @@ User submitted parameters must be signed except for sign. First, the string to b
 **For example, if we sign the following parameters**
 
 ```bash
-curl "https://www.coinmex.com/api/v1/spot/ccex/orders?limit=100"       
+curl "https://www.coinmex.pro/api/v1/spot/ccex/orders?limit=100"       
 ```
 
 ```java
@@ -125,7 +125,7 @@ Signature = base64.encode(hmac.digest())
 
 ## Request Process 
   
-The root URL for REST access：`https://www.coinmex.com`
+The root URL for REST access：`https://www.coinmex.pro`
 
 ### Request
 All requests are based on Https protocol, contentType in the request header must be uniformly set as: ‘application/json’.
