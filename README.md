@@ -72,20 +72,20 @@ API Key 和 Secret Key将由系统随机生成和提供，Passphrase由用户自
 
 所有REST请求的header都必须包含以下key：
 
-* ACCESS-KEY API KEY作为一个字符串。
-* ACCESS-SIGN 使用base64编码签名（请参阅签名消息）。
-* ACCESS-TIMESTAMP 您的请求的时间戳。
-* ACCESS-PASSPHRASE 您在创建API密钥时设置的口令。
-* Content-Type 所有请求都应该含有application/json类型内容，并且是有效的JSON。
+* ACCESS-KEY：API KEY作为一个字符串。
+* ACCESS-SIGN：使用base64编码签名（请参阅签名消息）。
+* ACCESS-TIMESTAMP：您请求的时间戳。
+* ACCESS-PASSPHRASE：您在创建API KEY时设置的口令。
+* Content-Type：所有请求都应该含有application/json类型内容，并且是有效的JSON。
 
 ## 签名
-ACCESS-SIGN的请求头是对 **timestamp + method + requestPath + "?" + queryString + body** 字符串(+表示字符串连接)使用 **HMAC SHA256** 方法加密，通过**BASE64** 编码输出而得到的。其中，timestamp 的值与 ACCESS-TIMESTAMP 
-请求头相同。
+ACCESS-SIGN的请求头是对 **timestamp + method + requestPath + "?" + queryString + body** 字符串(+表示字符串连接)使用 **HMAC SHA256** 方法加密，通过**BASE64** 编码输出而得到的。其中，timestamp 的值与 ACCESS-TIMESTAMP 请求头相同。
 
-* method 是请求方法(POST/GET/PUT/DELETE)，字母全部大写。
-* requestPath 是请求接口路径。
-* queryString GET请求中的查询字符串
-* body 是指请求主体的字符串，如果请求没有主体(通常为GET请求)则body可省略。
+### 签名各字段说明
+* method：请求方法(POST/GET/PUT/DELETE)，字母全部大写。
+* requestPath：请求接口路径。
+* queryString：请求中的查询字符串。
+* body：请求主体对应的字符串，如果请求没有主体(通常为GET请求)则body可省略。
 
 ### queryString为空时，待签名的字符串为：
 ```java
@@ -97,25 +97,23 @@ timestamp + method + requestPath + body
 timestamp + method + requestPath + "?" + queryString + body
 ```
 
-**例如：对于如下的请求参数进行签名**
+### 举例说明
 
-```bash
-curl "https://www.coinmex.pro/api/v1/spot/ccex/orders?limit=100"       
-```
-* 获取获取深度信息，以 LTC-BTC 币对为例
+* 获取订单信息，以 ETH-USDT 币对为例
 ```java
 Timestamp = 1540286290170 
 Method = "GET"
-requestPath = "/api/v1/spot/public/products/LTC-BTC/orderbook"
-queryString= "?size=100"
+requestPath = "/api/v1/spot/ccex/orders/28209089858592"
+queryString= "?code=eth-usdt"
 
 ```
 
 生成待签名的字符串
 
 ```
-Message = '1540286290170GET/api/v1/spot/public/products/LTC-BTC/orderbook?size=100'  
+Message = '1540286290170GET/api/v1/spot/ccex/orders/28209089858592?code=eth-usdt'  
 ```
+
 * 下单，以 LTC-BTC 币对为例
 
 ```java
@@ -135,7 +133,6 @@ Message = '1540286476248POST/api/v1/spot/ccex/orders{"code":"LTC-BTC","side":"bu
 然后，将待签名字符串添加私钥参数生成最终待签名字符串。
 
 
-例如：
 ```
 Signature = hmac(secretkey, Message, SHA256)
 ```
