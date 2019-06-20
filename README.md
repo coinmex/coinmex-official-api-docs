@@ -60,13 +60,12 @@ REST，即Representational State Transfer的缩写，是一种流行的互联网
 ## 生成API Key
 
 在对任何请求进行签名之前，您必须通过 CoinMex 网站【用户中心】-【API】创建一个API key。 创建key后，您将获得3个必须记住的信息：
-* API Key
+* API Key：由系统随机生成。
 
-* Secret Key
+* Secret Key：私钥，由系统随机生成，用于签名的生成。
 
-* Passphrase
+* Passphrase：口令，由用户自己设定。
 
-API Key 和 Secret Key将由系统随机生成和提供，Passphrase由用户自己设定。
 
 ## 发起请求
 
@@ -133,7 +132,7 @@ Message = '1561022985382POST/api/v1/spot/ccex/orders{"code":"ETH_USDT","side":"s
 
 ### 生成最终签名的步骤
 
-第一步，将待签名字符串使用私钥进行hmac sha256加密
+第一步，将待签名字符串使用私钥secretkey进行hmac sha256加密
 
 ```
 Signature = hmac(secretkey, Message, SHA256)
