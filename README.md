@@ -131,13 +131,13 @@ body = {"code":"LTC_BTC","side":"buy","type":"limit","size":"1","price":"1.001"}
 Message = '1540286476248POST/api/v1/spot/ccex/orders{"code":"LTC-BTC","side":"buy","type":"limit","size":"1","price":"1.001"}'  
 ```
 
-然后，将待签名字符串添加私钥参数生成最终待签名字符串。
+然后，将待签名字符串添加私钥参数生成最终待签名字符串
 
 
 ```
 Signature = hmac(secretkey, Message, SHA256)
 ```
-在使用前需要对于Signature进行base64编码
+最后对于Signature进行base64编码
 
 ```
 Signature = base64.encode(Signature.digest())
