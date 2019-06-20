@@ -79,9 +79,10 @@ API Key 和 Secret Key将由系统随机生成和提供，Passphrase由用户自
 * Content-Type：所有请求都应该含有application/json类型内容，并且是有效的JSON。
 
 ## 签名
-ACCESS-SIGN的请求头是对 **timestamp + method + requestPath + "?" + queryString + body** 字符串(+表示字符串连接)使用 **HMAC SHA256** 方法加密，通过**BASE64** 编码输出而得到的。其中，timestamp 的值与 ACCESS-TIMESTAMP 请求头相同。
+ACCESS-SIGN的请求头是对 **timestamp + method + requestPath + "?" + queryString + body** 字符串(+表示字符串连接)使用 **HMAC SHA256** 方法加密，通过**BASE64** 编码输出而得到的。
 
 ### 签名各字段说明
+* timestamp：与 ACCESS-TIMESTAMP 请求头相同。
 * method：请求方法(POST/GET/PUT/DELETE)，字母全部大写。
 * requestPath：请求接口路径。
 * queryString：请求中的查询字符串。
