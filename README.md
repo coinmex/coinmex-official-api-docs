@@ -66,17 +66,17 @@ REST，即Representational State Transfer的缩写，是一种流行的互联网
 
 * Passphrase
 
-API Key 和 Secret Key将由随机生成和提供，Passphrase由用户自己设定。
+API Key 和 Secret Key将由系统随机生成和提供，Passphrase由用户自己设定。
 
 ## 发起请求
 
-所有REST请求都必须包含以下标题：
+所有REST请求的header都必须包含以下key：
 
 * ACCESS-KEY API KEY作为一个字符串。
 * ACCESS-SIGN 使用base64编码签名（请参阅签名消息）。
-* ACCESS-TIMESTAMP 作为您的请求的时间戳。
+* ACCESS-TIMESTAMP 您的请求的时间戳。
 * ACCESS-PASSPHRASE 您在创建API密钥时设置的口令。
-* 所有请求都应该含有application/json类型内容，并且是有效的JSON。
+* Content-Type 所有请求都应该含有application/json类型内容，并且是有效的JSON。
 
 ## 签名
 ACCESS-SIGN的请求头是对 **timestamp + method + requestPath + "?" + queryString + body** 字符串(+表示字符串连接)使用 **HMAC SHA256** 方法加密，通过**BASE64** 编码输出而得到的。其中，timestamp 的值与 ACCESS-TIMESTAMP 
