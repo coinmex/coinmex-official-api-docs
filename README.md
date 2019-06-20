@@ -115,20 +115,20 @@ queryString= "?code=eth-usdt"
 Message = '1540286290170GET/api/v1/spot/ccex/orders/28209089858592?code=eth-usdt'  
 ```
 
-* 下单，以 LTC-BTC 币对为例
+* 下单，以 ETH-USDT 币对为例
 
 ```java
-Timestamp = 1540286476248 
+Timestamp = 1561022985382 
 Method = "POST"
 requestPath = "/api/v1/spot/ccex/orders"
-body = {"code":"LTC_BTC","side":"buy","type":"limit","size":"1","price":"1.001"}
+body = {"code":"ETH_USDT","side":"sell","type":"limit","size":"1","price":"1.001"}
 
 ```
 
 生成待签名的字符串
 
 ```
-Message = '1540286476248POST/api/v1/spot/ccex/orders{"code":"LTC-BTC","side":"buy","type":"limit","size":"1","price":"1.001"}'  
+Message = '1561022985382POST/api/v1/spot/ccex/orders{"code":"ETH_USDT","side":"sell","type":"limit","size":"1","price":"1.001"}'  
 ```
 
 ### 生成最终签名的步骤
