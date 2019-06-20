@@ -532,7 +532,18 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
     POST /api/v1/spot/ccex/orders
 ```
 
-```javascript
+**请求参数**
+
+|参数名| 参数类型 |必填|描述|
+|:----:|:----:|:---:|----|
+|code|String|是|币对如btc_usdt|
+|side|String|是|买入为buy，卖出为sell|
+|type|String|是|限价委托为limit，市价委托为market
+|size|String|否|发出限价委托以及市价卖出委托时传递，代表交易币的数量|
+|price|String|否|发出限价委托时传递，代表币对价格
+|funds|String|否|发出市价买入委托时传递，代表计价币的数量
+
+```java
     # Response
 
     {
@@ -545,17 +556,6 @@ HTTP状态码200表示成功响应，并可能包含内容。如果响应含有�
 
     + orderId: 订单ID
     + result: 下单结果
-
-**请求参数**
-
-|参数名| 参数类型 |必填|描述|
-|:----:|:----:|:---:|----|
-|code|String|是|币对如btc_usdt|
-|side|String|是|买入为buy，卖出为sell|
-|type|String|是|限价委托为limit，市价委托为market
-|size|String|否|发出限价委托以及市价卖出委托时传递，代表交易币的数量|
-|price|String|否|发出限价委托时传递，代表币对价格
-|funds|String|否|发出市价买入委托时传递，代表计价币的数量
 
 
 ### 3. 撤销所有委托
