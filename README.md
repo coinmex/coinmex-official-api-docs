@@ -150,7 +150,7 @@ REST访问的根URL：`https://www.coinmex.pro`
 
 ### 请求
 
-所有请求基于Https协议，请求头信息中Content-Type 需要统一设置为:'application/json’。
+所有请求基于Https协议，请求头信息中Content-Type 需要统一设置为: 'application/json'。
 
 **请求交互说明**
 
