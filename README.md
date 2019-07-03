@@ -133,13 +133,13 @@ Message = '1561022985382POST/api/v1/spot/ccex/orders{"code":"ETH_USDT","side":"s
 第一步，将待签名字符串使用私钥secretkey进行hmac sha256加密
 
 ```
-Signature = hmac(secretkey, Message, SHA256)
+Signature = hmac_sha256(secretkey, Message)
 ```
 
 第二步，对于Signature进行base64编码
 
 ```
-Signature = base64.encode(Signature.digest())
+Signature = base64.encode(Signature)
 ```
 
 ## 请求交互  
