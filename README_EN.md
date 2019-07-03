@@ -119,8 +119,8 @@ Then, the character to be signed is added with the private key parameters to gen
 
 For example:
 ```
-hmac = hmac(secretkey, Message, SHA256)
-Signature = base64.encode(hmac.digest())
+Signature = hmac_sha256(secretkey, Message)
+Signature = base64.encode(Signature)
 ```
 
 ## Request Process 
