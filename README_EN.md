@@ -556,7 +556,7 @@ When a rate limit is exceeded, a status of 429 Too Many Requests will be returne
 
 ```http
     # Request
-    DELETE /api/v1/spot/ccex/orders/orderId
+    DELETE /api/v1/spot/ccex/orders/<orderId>
 ```
 ```javascript
     # Response
